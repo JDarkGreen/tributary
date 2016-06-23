@@ -1,0 +1,35 @@
+/*
+* Antes de Empezar : creditos a Ingenioart y jDarkGreen
+*/
+
+/*===============================================================*/
+
+LA ESTRUCTURA DE LOS ARCHIVOS ES LA SIGUIENTE EN EL TEMA
+
+//PARA TRABAJAR O EDITAR LOS ARCHIVOS DE RECURSOS TENER INSTALADO NODE JS
+EN SU PC , LUEGO INSTALAR GULP.JS Y FINALMENTE DESDE EL COMMAND PRONT 
+LLEGAR A ESTA RUTA POR EJEMPLO en caso de trabajar con xampp :
+cd c:/xampp/htdocs/tributart/wp-content/themes/tributary
+haber borrado la carpeta node_modules si existiera y ejecutar este comando
+"npm install" sin comillas luego de acabar de instalar todo recien se puede hacer
+la compilacion de archivos tanto css como js y las imagenes
+
+LOS ASSETS O ARCHIVOS DE RECURSOS DE ENCUENTRAN EN LA CARPETA ASSETS
+SE DIVIDEN EN 
+
++STYLES 
++JS
++IMAGES
++FONTS
+
+//Styles se divide en dos carpetas build donde se encuentran los archivos para produccion 
+y minificados y source donde se encuentra el .sass principal para los estilos principales 
+de este tema.
+
+//JS de la misma manera con js se divide en dos carpetas build y source este ultimo contiene
+el js principal para el desarrollo del tema 
+
+//IMAGES se encuentran alojadas las imagenes necesarias del tema 
+
+//FONTS, las fuentes empleadas para el tema , seccionadas en carpetas.
+

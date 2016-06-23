@@ -1,0 +1,37 @@
+
+/*keyframes*/
+@keyframes rotatebox{
+	0%  { transform: rotateY( 0deg ); }
+	100%{ transform: rotateY( 360deg ); }
+}
+
+@keyframes pulse{
+	0%, 100%{ transform: scale( 1 ); }
+	50%{ transform: scale( 1.2 ); }
+}
+
+
+/*login*/
+body.login{
+	background     : url("../../../images/admin/bg-login.jpg") no-repeat;
+	background-size: 100% 100%;
+}
+
+#login h1 a{ 
+	background: url("../../../images/admin/admin-logo.jpg") no-repeat; 
+	width     : 152px;
+	height    : 66px;
+	/*animation: pulse 2s cubic-bezier(0, 0, 0, 1.74) infinite;*/
+	animation: rotatebox 6s ease-in-out infinite;
+} 
+
+/* form */
+.login form{
+	background: rgba(0,0,0,.8);
+}
+
+/*inputs*/
+.login form .input, .login form input[type=checkbox], .login input[type=text]{
+	background: rgba(0,0,0,.8);
+	color     : rgba(255,255,255,.8);
+}

@@ -1,0 +1,734 @@
+# Loco Gettext template
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PARACAS SUNSET Tema Wordpresss\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Thu Jun 16 2016 15:03:49 GMT-0500\n"
+"POT-Revision-Date: Thu Jun 16 2016 15:18:23 GMT-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: admin <jgomez.4net@gmail.com>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Loco-Target-Locale: en_US\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: ../footer.php:67
+msgid "horario de atención"
+msgstr ""
+
+#: ../footer.php:80
+msgid "redes sociales"
+msgstr ""
+
+#: ../header.php:87
+msgid "reservas: "
+msgstr ""
+
+#: ../index.php:50 ../index.php:102 ../index.php:153 ../index.php:204 ../index.
+#: php:251
+msgid "ver más"
+msgstr ""
+
+#: ../index.php:65
+msgid "beneficios del hotel"
+msgstr ""
+
+#: ../index.php:92
+msgid "paracas sunset hotel"
+msgstr ""
+
+#: ../index.php:97
+msgctxt "Updating Content"
+msgid "Actualizando Contenido "
+msgstr ""
+
+#: ../index.php:118
+msgid "tour"
+msgstr ""
+
+#: ../index.php:169
+msgid "galerías"
+msgstr ""
+
+#: ../index.php:222
+msgid "blog"
+msgstr ""
+
+#: ../index.php:264
+msgid "facebook"
+msgstr ""
+
+#: ../functions/add-new-metabox.php:331
+msgid "Servicio: Paquete 2"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:12 ../functions/add-new-taxonomy.php:13
+msgid "Categoría Servicio"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:14
+msgid "Buscar Categoría Servicio"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:15
+msgid "Todas Categorías del Servicio"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:16
+msgid "Categoría padre del Servicio"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:17 ../functions/add-new-taxonomy.php:42 ..
+#: functions/add-new-taxonomy.php:67
+msgid "Categoría padre:"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:18
+msgid "Editar categoría de Servicio"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:19
+msgid "Actualizar categoría de Servicio"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:20
+msgid "Agregar nueva categoría de Servicio"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:21
+msgid "Nuevo nombre categoría de Servicio"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:22
+msgid "Categoria Servicio"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:37 ../functions/add-new-taxonomy.php:38
+msgid "Categoría Cliente"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:39
+msgid "Buscar Categoría Cliente"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:40
+msgid "Todas Categorías del Cliente"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:41
+msgid "Categoría padre del Cliente"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:43
+msgid "Editar categoría de Cliente"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:44
+msgid "Actualizar categoría de Cliente"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:45
+msgid "Agregar nueva categoría de Cliente"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:46
+msgid "Nuevo nombre categoría de Cliente"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:47
+msgid "Categoria Cliente"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:62 ../functions/add-new-taxonomy.php:63
+msgid "Categoría Imagen"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:64
+msgid "Buscar Categoría Imagen"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:65
+msgid "Todas Categorías de la Imagen"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:66
+msgid "Categoría padre de la Imagen"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:68
+msgid "Editar categoría de la Imagen"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:69
+msgid "Actualizar categoría de la Imagen"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:70
+msgid "Agregar nueva categoría de la Imagen"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:71
+msgid "Nuevo nombre categoría de la Imagen"
+msgstr ""
+
+#: ../functions/add-new-taxonomy.php:72
+msgid "Categoria Imagen"
+msgstr ""
+
+#: ../functions/add-sidebars.php:12
+msgid "Header Lenguaje Sidebar"
+msgstr ""
+
+#: ../functions/add-sidebars.php:14
+msgid "Sidebar colocar widgets de lenguaje"
+msgstr ""
+
+#: ../functions/add-type-posts.php:10
+msgid "Banners"
+msgstr ""
+
+#: ../functions/add-type-posts.php:11
+msgid "Banner"
+msgstr ""
+
+#: ../functions/add-type-posts.php:12
+msgid "Nuevo Banner"
+msgstr ""
+
+#: ../functions/add-type-posts.php:13
+msgid "Agregar nuevo Banner"
+msgstr ""
+
+#: ../functions/add-type-posts.php:14
+msgid "Editar Banner"
+msgstr ""
+
+#: ../functions/add-type-posts.php:15
+msgid "Ver Banner"
+msgstr ""
+
+#: ../functions/add-type-posts.php:16
+msgid "Buscar Banners"
+msgstr ""
+
+#: ../functions/add-type-posts.php:17
+msgid "Banner no encontrado"
+msgstr ""
+
+#: ../functions/add-type-posts.php:18
+msgid "Banner no encontrado en la papelera"
+msgstr ""
+
+#: ../functions/add-type-posts.php:34
+msgid "Servicios"
+msgstr ""
+
+#: ../functions/add-type-posts.php:35
+msgid "Servicio"
+msgstr ""
+
+#: ../functions/add-type-posts.php:36
+msgid "Nuevo Servicio"
+msgstr ""
+
+#: ../functions/add-type-posts.php:37
+msgid "Agregar nuevo Servicio"
+msgstr ""
+
+#: ../functions/add-type-posts.php:38
+msgid "Editar Servicio"
+msgstr ""
+
+#: ../functions/add-type-posts.php:39
+msgid "Ver Servicio"
+msgstr ""
+
+#: ../functions/add-type-posts.php:40
+msgid "Buscar Servicios"
+msgstr ""
+
+#: ../functions/add-type-posts.php:41
+msgid "Servicio no encontrado"
+msgstr ""
+
+#: ../functions/add-type-posts.php:42
+msgid "Servicio no encontrado en la papelera"
+msgstr ""
+
+#: ../functions/add-type-posts.php:58
+msgid "Clientes"
+msgstr ""
+
+#: ../functions/add-type-posts.php:59
+msgid "Cliente"
+msgstr ""
+
+#: ../functions/add-type-posts.php:60
+msgid "Nuevo Cliente"
+msgstr ""
+
+#: ../functions/add-type-posts.php:61
+msgid "Agregar nuevo Cliente"
+msgstr ""
+
+#: ../functions/add-type-posts.php:62
+msgid "Editar Cliente"
+msgstr ""
+
+#: ../functions/add-type-posts.php:63
+msgid "Ver Cliente"
+msgstr ""
+
+#: ../functions/add-type-posts.php:64
+msgid "Buscar Clientes"
+msgstr ""
+
+#: ../functions/add-type-posts.php:65
+msgid "Cliente no encontrado"
+msgstr ""
+
+#: ../functions/add-type-posts.php:66
+msgid "Cliente no encontrado en la papelera"
+msgstr ""
+
+#: ../functions/add-type-posts.php:82
+msgid "Promociones"
+msgstr ""
+
+#: ../functions/add-type-posts.php:83
+msgid "Promoción"
+msgstr ""
+
+#: ../functions/add-type-posts.php:84
+msgid "Nueva Promoción"
+msgstr ""
+
+#: ../functions/add-type-posts.php:85
+msgid "Agregar nueva Promoción"
+msgstr ""
+
+#: ../functions/add-type-posts.php:86
+msgid "Editar Promoción"
+msgstr ""
+
+#: ../functions/add-type-posts.php:87
+msgid "Ver Promoción"
+msgstr ""
+
+#: ../functions/add-type-posts.php:88
+msgid "Buscar Promoción"
+msgstr ""
+
+#: ../functions/add-type-posts.php:89
+msgid "Promoción no encontrada"
+msgstr ""
+
+#: ../functions/add-type-posts.php:90
+msgid "Promoción no encontrada en la papelera"
+msgstr ""
+
+#: ../functions/add-type-posts.php:106
+msgid "Gal. Imágenes"
+msgstr ""
+
+#: ../functions/add-type-posts.php:107
+msgid "Imagen"
+msgstr ""
+
+#: ../functions/add-type-posts.php:108
+msgid "Nueva Imagen"
+msgstr ""
+
+#: ../functions/add-type-posts.php:109
+msgid "Agregar nueva Imagen"
+msgstr ""
+
+#: ../functions/add-type-posts.php:110
+msgid "Editar Imagen"
+msgstr ""
+
+#: ../functions/add-type-posts.php:111
+msgid "Ver Imagen"
+msgstr ""
+
+#: ../functions/add-type-posts.php:112
+msgid "Buscar Imagen"
+msgstr ""
+
+#: ../functions/add-type-posts.php:113
+msgid "Imagen no encontrada"
+msgstr ""
+
+#: ../functions/add-type-posts.php:114
+msgid "Imagen no encontrada en la papelera"
+msgstr ""
+
+#: ../functions/add-type-posts.php:130
+msgid "Gal. Videos"
+msgstr ""
+
+#: ../functions/add-type-posts.php:131
+msgid "Video"
+msgstr ""
+
+#: ../functions/add-type-posts.php:132
+msgid "Nuevo Video"
+msgstr ""
+
+#: ../functions/add-type-posts.php:133
+msgid "Agregar nuevo Video"
+msgstr ""
+
+#: ../functions/add-type-posts.php:134
+msgid "Editar Video"
+msgstr ""
+
+#: ../functions/add-type-posts.php:135
+msgid "Ver Video"
+msgstr ""
+
+#: ../functions/add-type-posts.php:136
+msgid "Buscar Video"
+msgstr ""
+
+#: ../functions/add-type-posts.php:137
+msgid "Video no encontrado"
+msgstr ""
+
+#: ../functions/add-type-posts.php:138
+msgid "Video no encontrado en la papelera"
+msgstr ""
+
+#: ../functions/add-type-posts.php:154
+msgid "Habitaciones"
+msgstr ""
+
+#: ../functions/add-type-posts.php:155
+msgid "Habitación"
+msgstr ""
+
+#: ../functions/add-type-posts.php:156
+msgid "Nueva Habitación"
+msgstr ""
+
+#: ../functions/add-type-posts.php:157
+msgid "Agregar nueva Habitación"
+msgstr ""
+
+#: ../functions/add-type-posts.php:158
+msgid "Editar Habitación"
+msgstr ""
+
+#: ../functions/add-type-posts.php:159
+msgid "Ver Habitación"
+msgstr ""
+
+#: ../functions/add-type-posts.php:160
+msgid "Buscar Habitación"
+msgstr ""
+
+#: ../functions/add-type-posts.php:161
+msgid "Habitación no encontrada"
+msgstr ""
+
+#: ../functions/add-type-posts.php:162
+msgid "Habitación no encontrada en la papelera"
+msgstr ""
+
+#: ../functions/add-type-posts.php:178
+msgid "Tours"
+msgstr ""
+
+#: ../functions/add-type-posts.php:179
+msgid "Tour"
+msgstr ""
+
+#: ../functions/add-type-posts.php:180
+msgid "Nuevo Tour"
+msgstr ""
+
+#: ../functions/add-type-posts.php:181
+msgid "Agregar nuevo Tour"
+msgstr ""
+
+#: ../functions/add-type-posts.php:182
+msgid "Editar Tour"
+msgstr ""
+
+#: ../functions/add-type-posts.php:183
+msgid "Ver Tour"
+msgstr ""
+
+#: ../functions/add-type-posts.php:184
+msgid "Buscar Tour"
+msgstr ""
+
+#: ../functions/add-type-posts.php:185
+msgid "Tour no encontrado"
+msgstr ""
+
+#: ../functions/add-type-posts.php:186
+msgid "Tour no encontrado en la papelera"
+msgstr ""
+
+#: ../functions/custom-comments.php:16
+msgid "Pingback:"
+msgstr ""
+
+#: ../functions/custom-comments.php:50
+msgid "Tu comentario está esperando moderación."
+msgstr ""
+
+#: ../functions/custom-comments.php:73
+msgid "Etiquetas permitidas"
+msgstr ""
+
+#: ../functions/custom-comments.php:94
+msgid "Nombre"
+msgstr ""
+
+#: ../functions/custom-comments.php:94
+msgid " (requerido)"
+msgstr ""
+
+#: ../functions/custom-comments.php:98
+msgid "Email"
+msgstr ""
+
+#: ../functions/custom-comments.php:98
+msgid " (requerido) (no será publicado )"
+msgstr ""
+
+#: ../functions/custom-fields-taxonomy.php:14
+msgid "Agregar Imagen Destacada"
+msgstr ""
+
+#: ../functions/custom-fields-taxonomy.php:32
+msgid "Agregar Imagen"
+msgstr ""
+
+#: ../functions/custom-fields-taxonomy.php:35
+msgid "Subir una imagen destacada medida: 980x659"
+msgstr ""
+
+#: ../functions/menu-register.php:8
+msgid "Main Menu"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:17
+msgid "Logo"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:18
+msgid "Permite subir tu logo personalizado."
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:28
+msgid "Carga tu Logo"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:38
+msgid "Historia Misión y Visión Empresa"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:39
+msgid "Sección Misión y Visión Empresa"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:48
+msgid "Escribe el texto HISTORIA"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:59
+msgid "Escribe el texto MISIÓN"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:70
+msgid "Escribe el texto VISIÓN"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:81
+msgid "Escribe el texto VALORES"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:92
+msgid "Redes Sociales"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:93
+msgid "Sección Redes Sociales"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:102
+msgid "Coloca el link de facebook de la empresa"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:113
+msgid "Coloca el link de youtube de la empresa"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:124
+msgid "Coloca el link de twitter de la empresa"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:135
+msgid "Coloca el link de gmail de la empresa"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:144
+msgid "Seccion Correos"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:145
+msgid "Escribe el Correo Contacto Correspondiente"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:156
+msgid "Email Contacto"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:190
+msgid "Celulares de Contacto"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:191
+msgid "Escribir números correspondientes"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:202
+msgid "Celular: "
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:211 ../functions/admin/theme-
+#: customizer.php:212
+msgid "Telefono de Contacto"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:223
+msgid "Escribe el o los números de teléfono [ NOTA: SEPARADOS POR COMAS ]"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:232 ../functions/admin/theme-
+#: customizer.php:233
+msgid "Direccion de Contacto"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:244
+msgid "Escribe la dirección del Contacto"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:252 ../functions/admin/theme-
+#: customizer.php:253
+msgid "Mapa de Contacto"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:264
+msgid "Escribe latitud y longitud de mapa separados por coma"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:272 ../functions/admin/theme-
+#: customizer.php:273
+msgid "Sección Nosotros"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:284
+msgid "Escribe contenido que ira en sección nosotros - PORTADA"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:296
+msgid "Imagen Nosotros"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:303 ../functions/admin/theme-
+#: customizer.php:304
+msgid "Sección Footer"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:315
+msgid "Escribe contenido en sección FOOTER"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:328
+msgid "Escribe Servicios en sección FOOTER"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:336
+msgid "Horarios de Atención"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:337
+msgid "Sección de Horarios de Atención"
+msgstr ""
+
+#: ../functions/admin/theme-customizer.php:348
+msgid "Escribe el o los horarios de atención al cliente:"
+msgstr ""
+
+#: ../partials/banner-promociones.php:19
+msgid "Ver más"
+msgstr ""
+
+#: ../partials/banner-services.php:10
+msgid "Disfruta en Paracas Sunset Hotel las maravillas de Paracas - Ica"
+msgstr ""
+
+#: ../partials/banner-services.php:12
+msgid "reservar"
+msgstr ""
+
+#: ../partials/carousel-clientes.php:6
+msgid "nuestros clientes"
+msgstr ""
+
+#: ../partials/miscelaneo.php:19
+msgid "Artículos"
+msgstr ""
+
+#: ../partials/miscelaneo.php:62
+msgid "Facebook"
+msgstr ""
+
+#: ../partials/sidebar-categories.php:7
+msgid "categorías"
+msgstr ""
+
+#. Name of the theme
+msgid "PARACAS SUNSET Tema Wordpresss"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "https://"
+msgstr ""
+
+#. Description of the theme
+msgid "Una web hecha en wordpress"
+msgstr ""
+
+#. Author of the theme
+msgid "Ingenioart"
+msgstr ""
+
+#: ../footer.php:27
+msgid "contacto"
+msgstr ""
+
+#: ../index.php:19
+msgid "habitaciones"
+msgstr ""
+
+#: ../index.php:74
+msgid "bienvenidos"
+msgstr ""

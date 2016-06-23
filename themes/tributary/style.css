@@ -1,0 +1,32 @@
+/*
+Theme Name: PARACAS SUNSET Tema Wordpresss
+Theme URI: https://
+Author: Ingenioart
+Author URI: https://
+Description:  Una web hecha en wordpress
+Version: 1.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: 
+Text Domain: paracas, hotel , sunset , reservas 
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* font awesome */
+@import url("assets/styles/build/font-awesome/css/font-awesome.min.css"); 
+/*bootstrap*/
+@import url("assets/styles/build/bootstrap.min.css"); 
+/* owl carousel */
+@import url("assets/styles/build/owl.carousel.css"); 
+/* fancybox */
+@import url("assets/styles/build/fancybox/jquery.fancybox.css"); 
+/* parsley */
+@import url("assets/styles/build/parsley.css"); 
+/* rev slider */
+@import url("assets/styles/build/revslider.css"); 
+/* slidebars */
+@import url("assets/styles/build/slidebars.min.css"); 
+/* archivo master */
+@import url("assets/styles/build/master.css");
