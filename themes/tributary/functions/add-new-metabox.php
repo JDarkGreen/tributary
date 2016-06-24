@@ -342,7 +342,7 @@ function cd_banner_text_save( $post_id )
 
 //Este metabox permite agregar un editor de texto para el segundo paquete
 //en este caso de servicio
-add_action('add_meta_boxes', 'theme_register_add_editors');
+/*add_action('add_meta_boxes', 'theme_register_add_editors');
 
 function theme_register_add_editors(){
 	add_meta_box('WYSIWG_THEME_PERF' , __('Servicio: Paquete 2' , LANG ) , 'custom_theme_cb' , array('servicio') );
@@ -366,7 +366,7 @@ function custom_theme_save_postdata( $post_id ){
 }
 
 //Save the Data
-add_action( 'save_post', 'custom_theme_save_postdata' );
+add_action( 'save_post', 'custom_theme_save_postdata' );*/
 
 
 ?>

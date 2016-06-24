@@ -101,7 +101,7 @@ var j = jQuery.noConflict();
 
 				/* Generar el carousel */
 				current.owlCarousel({
-					items          : Items,
+					items          : parseInt( Items ),
 					lazyLoad       : false,
 					loop           : true,
 					margin         : parseInt( Margins ),
@@ -115,7 +115,7 @@ var j = jQuery.noConflict();
 					dots           : Boolean( Dot ),
 					responsive:{
 				      	640:{
-				            items: Itemsresponsive
+				            items: parseInt( Itemsresponsive )
 				        },
 			    	}	
 				});
@@ -144,6 +144,29 @@ var j = jQuery.noConflict();
 			var slideto = j(this).attr('data-to');
 			j("#"+slider).trigger( 'to.owl.carousel' , [ slideto , 900 ] );
 		});
+
+		/*|----------------------------------------------------------------------|*/
+		/*|-----  CAROUSEL ARTICULOS - SECCIONES GENERALES  ------|*/
+		/*|----------------------------------------------------------------------|*/
+		if( j(".js-carousel-vertical").length )
+		{
+			j(".js-carousel-vertical").each(function(){
+				/* Carousel */
+				var current = j(this);
+				/* Velocidad */
+				var speed   = current.attr('data-speed') !== null && typeof(current.attr('data-speed') ) !== "undefined" ? current.attr('data-speed') : 1500;
+				/* Visibilidad */
+				var items_visible = current.attr('data-items') !== null && typeof(current.attr('data-items') ) !== "undefined" ? current.attr('data-items') : 3;
+				/**/
+				current.jCarouselLite({
+					vertical: true,
+					auto    : 1500,
+					speed   : parseInt(speed),
+					visible : parseInt(items_visible),	
+	  			});
+			});
+
+		}
 
 		/*|----------------------------------------------------------------------|*/
 		/*|-----  ISOTOPE DE IMAGENES  -----|*/
@@ -190,38 +213,6 @@ var j = jQuery.noConflict();
 		});
 
 
-		/*|----------------------------------------------------------------------|*/
-		/*|-----  TABS SECCION BLOG ARTICULOS   -----|*/
-		/*|----------------------------------------------------------------------|*/
-
-		j(".group-buttons-tabs a").on('click',function(e){
-			e.preventDefault();
-
-			/* Activar elemento activo */
-			j(".group-buttons-tabs a").removeClass('active');
-			j(this).addClass('active');
-
-			/* Mostrar contenedor respectivo */
-			var container = j(this).attr('href');
-			if( container.length ){
-				/* Ocultar los otros contenedores */
-				j(".articles-features__item").slideUp( 'fast' );
-				j(container).delay(300).fadeIn(900);
-			}
-		});
-
-		/*|-------------------------------------------------------------|*/
-		/*|-----  TABS SECCIÓN PREGUNTAS  ------|*/
-		/*|--------------------------------------------------------------|*/	
-
-		j(".pagePreguntas__section .panel .panel-heading .panel-title a")
-		.on('click',function(){
-			//Quitar todas las clases activas
-			j(".pagePreguntas__section .panel .panel-heading .panel-title a")
-			.removeClass('active');
-			//Agregar la clase activa al elemento actual
-			j(this).addClass('active');
-		});	
 
 		/*|-------------------------------------------------------------|*/
 		/*|-----  VALIDADOR FORMULARIO.  ------|*/

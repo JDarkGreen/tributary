@@ -20,13 +20,14 @@
 
 //Color 
 
-$theme_gray    : #AEAEAE
-$theme_guinda  : #A70032
-$theme_blue    : #003352
+$theme_gray      : #AEAEAE
+$theme_gray_claro: #EBE9EE
+$theme_guinda    : #A70032
+$theme_blue      : #003352
 
-$theme_facebook: #3A5998
-$theme_twitter : #00ABF1
-$theme_gplus   : #DB4B39
+$theme_facebook  : #3A5998
+$theme_twitter   : #00ABF1
+$theme_gplus     : #DB4B39
 
 
 /***************************************************************************************/
@@ -55,7 +56,7 @@ figure
 //EXPAND
 +keyframes( expand )
 	0%, 100%
-		+scale( 1.3 )
+		+scale( 1.1 )
 	50%
 		+scale( 1.0 )
 
@@ -113,18 +114,26 @@ figure
 
 //Flechas de Slider en común
 .arrow__common-slider
+	align-items    : center 
+	background     : gray 
+	display        : flex 
+	height         : 40px 
+	justify-content: center 
 	margin         : 0 auto
 	position       : absolute
 	text-decoration: none
 	top            : 50%
+	width          : 40px 
 	z-index        : 999
 	i 
-		+text-shadow( 1px 1px 4px white )
-		font-size  : 34px
-		font-weight: 500
-		position: relative 
+		color      : white 
+		font-size  : 25px
+		position   : relative 
+
 	//hover 
-	&:hover 
+	&:hover , &:focus 
+		text-decoration: none 
+	&:hover
 		i 
 			+animation( pulse 700ms cubic-bezier(.5,.5,.5,1.5) infinite )	
 
@@ -160,28 +169,46 @@ figure
 //+BOTONES
 //++ Botón Ver Más
 .btnCommon__show-more
-	+border-radius( 5px )
 	+box-shadow( inset 0 0 0 0 transparent )
-	+transition( color 1000ms ease-in , box-shadow 1000ms cubic-bezier(.5 , .5 , .5 ,1.5 ) .2s )
-	color    : white 
-	display  : block 
-	font-size: 14px 
-	margin   : 0 auto 
-	max-width: 115px
-	overflow : hidden
-	padding  : 8px 12px 
+	+transition( color 1000ms ease-in , box-shadow 750ms ease-in-out )
+	background: $theme_guinda
+	color     : white 
+	display   : inline-block 
+	font-size : 14px 
+	margin    : 0 auto 
+	overflow  : hidden
+	padding   : 8px 30px 
+	text-align: center 
 	//hover y focus
 	&:hover , &:focus
 		color          : white 
 		text-decoration: none 
+	&:hover 
+		+box-shadow( inset 300px 0 0 0 white )
+		color: $theme_guinda
+
 
 //+TITULOS
 //++ Titulo de Seccion de Pagina
 .titleCommon__page
-	color      : $theme_blue
-	font-family: "Roboto" , sans-serif
-	margin     : 0 
-
+	line-height: 1em 
+	margin     : 0 auto 25px
+	padding    : 0 0 5px  
+	span 
+		color      : $theme_blue
+		font-family: "Roboto" , sans-serif
+		font-weight: 700 
+		margin     : 0
+		&:before
+			background: $theme_blue
+			bottom    : -4px
+			content   : ""
+			height    : 4px
+			left      : 0
+			margin    : 0 auto
+			position  : absolute
+			right     : 0
+			width     : 124px
 
 //IMAGEN NOT BLUR ( NO DIFUMINADA )
 .imgNotBlur
@@ -392,8 +419,87 @@ figure
 					font-family: "Bebas"
 					font-size  : 30px 
 	
-//Imagen de slider 
-.pageInicio__slider__image
+//SECCIÓN DE SERVICIOS
+.pageInicio__services
+	background: $theme_gray_claro
+	padding   : 39px 0 24px 
+
+/* GaLería de SERVICIOS */
+.pageInicio_gal_services
+	//Articulos
+	.item-service
+		font-family: "Roboto Condensed" , sans-serif
+		//Imagen
+		figure 
+			margin    : 0 auto 30px 
+			max-height: 100px 
+			overflow  : hidden
+			img 
+				+transition( all 900ms ease-in )
+		//Titulo
+		h3 
+			font-size  : 20px 
+			font-weight: 600
+			line-height: 1em 
+			margin     : 0 auto 16px 
+		//Extracto o parrafo
+		p 
+			margin: 0 auto 35px
+		//Hover Article
+		&:hover 
+			figure 
+				img 
+					+scale( 1.2 )
+
+/* Flechas de Carousel Servicios */
+.arrowHomeSliderServices-prev
+	right: 43px 
+	top  : -80px 	
+.arrowHomeSliderServices-next
+	right: 0px 
+	top  : -80px 
+
+// SECCION MISCELANEO
+.pageInicio__miscelaneo
+	padding: 50px 0 
+/* Slider de Post */
+.pageInicio_slider_post
+	ul 
+		list-style-type: none 
+		margin         : 0 
+		padding        : 0 
+	/* Artículos */
+	.articles-item
+		font-family: "Roboto Condensed", sans-serif
+		margin     : 0 auto 28px
+		/* Imagen */
+		figure 
+			margin   : 0 22px 0 0
+			max-width: 187px 
+			overflow : hidden
+			img 
+				+transition( all 3s ease-in )
+		/* Titulo */
+		h3 
+			font-size  : 20px 
+			font-weight: 700
+		/* Parrafp */
+		p 
+			color      : $theme_gray
+			line-height: 1.2em 
+			/* Link del post */
+			a.read-more
+				color          : $theme_guinda
+				display        : inline-block
+				text-decoration: none
+		/* Hover Article */
+		&:hover 
+			figure 
+				img 
+					+scale( 1.2 )
+			/* link del post */
+			a.read-more 
+				animation: expand 2s cubic-bezier(.5,.5,.5,1.5) infinite
 
 
 //SECCIÓN DE MAPA
