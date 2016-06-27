@@ -21,7 +21,7 @@ function theme_customize_register($wp_customize) {
 	
 	$wp_customize->add_setting('theme_custom_settings[logo]', array(
 		'default' => IMAGES . '/logo.png',
-		'type' => 'option'
+		'type'    => 'theme_mod'
 	));
 	
 	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'logo', array(
@@ -42,7 +42,7 @@ function theme_customize_register($wp_customize) {
 	/* HISTORIA */
 	$wp_customize->add_setting('theme_custom_settings[text_historia]', array(
 		'default' => '',
-		'type' => 'option'
+		'type' => 'theme_mod'
 	));
 	$wp_customize->add_control('theme_custom_settings[text_historia]', array(
 		'label'    => __('Escribe el texto HISTORIA', LANG),
@@ -53,7 +53,7 @@ function theme_customize_register($wp_customize) {
 	/* MISION */
 	$wp_customize->add_setting('theme_custom_settings[text_mision]', array(
 		'default' => '',
-		'type' => 'option'
+		'type' => 'theme_mod'
 	));
 	$wp_customize->add_control('theme_custom_settings[text_mision]', array(
 		'label'    => __('Escribe el texto MISIÓN', LANG),
@@ -64,7 +64,7 @@ function theme_customize_register($wp_customize) {
 	/* VISION */
 	$wp_customize->add_setting('theme_custom_settings[text_vision]', array(
 		'default' => '',
-		'type' => 'option'
+		'type' => 'theme_mod'
 	));
 	$wp_customize->add_control('theme_custom_settings[text_vision]', array(
 		'label'    => __('Escribe el texto VISIÓN', LANG),
@@ -75,7 +75,7 @@ function theme_customize_register($wp_customize) {
 	/* VALORES */
 	$wp_customize->add_setting('theme_custom_settings[text_valores]', array(
 		'default' => '',
-		'type' => 'option'
+		'type' => 'theme_mod'
 	));
 	$wp_customize->add_control('theme_custom_settings[text_valores]', array(
 		'label'    => __('Escribe el texto VALORES', LANG),
@@ -95,8 +95,8 @@ function theme_customize_register($wp_customize) {
 	));	
 	//facebook
 	$wp_customize->add_setting('theme_custom_settings[red_social_fb]', array(
-		'default' => '',
-		'type' => 'option'
+		'default' => 'https://www.facebook.com/',
+		'type'    => 'theme_mod'
 	));
 	$wp_customize->add_control('theme_custom_settings[red_social_fb]', array(
 		'label'    => __('Coloca el link de facebook de la empresa', LANG),
@@ -107,7 +107,7 @@ function theme_customize_register($wp_customize) {
 	//youtube
 	$wp_customize->add_setting('theme_custom_settings[red_social_ytube]', array(
 		'default' => '',
-		'type' => 'option'
+		'type'    => 'theme_mod'
 	));
 	$wp_customize->add_control('theme_custom_settings[red_social_ytube]', array(
 		'label'    => __('Coloca el link de youtube de la empresa', LANG),
@@ -118,7 +118,7 @@ function theme_customize_register($wp_customize) {
 	//twitter
 	$wp_customize->add_setting('theme_custom_settings[red_social_twitter]', array(
 		'default' => '',
-		'type' => 'option'
+		'type'    => 'theme_mod'
 	));
 	$wp_customize->add_control('theme_custom_settings[red_social_twitter]', array(
 		'label'    => __('Coloca el link de twitter de la empresa', LANG),
@@ -129,7 +129,7 @@ function theme_customize_register($wp_customize) {
 	//gmail
 	$wp_customize->add_setting('theme_custom_settings[red_social_gmail]', array(
 		'default' => '',
-		'type' => 'option'
+		'type'    => 'theme_mod'
 	));
 	$wp_customize->add_control('theme_custom_settings[red_social_gmail]', array(
 		'label'    => __('Coloca el link de gmail de la empresa', LANG),
@@ -149,7 +149,7 @@ function theme_customize_register($wp_customize) {
 	//Email Principal
 	$wp_customize->add_setting('theme_custom_settings[contact_email]', array(
 		'default' => '',
-		'type' => 'option'
+		'type' => 'theme_mod'
 	));
 	
 	$wp_customize->add_control('theme_custom_settings[contact_email]', array(
@@ -162,7 +162,7 @@ function theme_customize_register($wp_customize) {
 	//Email Gerente Comercial
 	/*$wp_customize->add_setting('theme_custom_settings[contact_email_gerente]', array(
 		'default' => '',
-		'type' => 'option'
+		'type' => 'theme_mod'
 	));
 	
 	$wp_customize->add_control('theme_custom_settings[contact_email_gerente]', array(
@@ -175,7 +175,7 @@ function theme_customize_register($wp_customize) {
 	//Email Administración documentaria
 	$wp_customize->add_setting('theme_custom_settings[contact_email_admin_doc]', array(
 		'default' => '',
-		'type' => 'option'
+		'type' => 'theme_mod'
 	));
 	
 	$wp_customize->add_control('theme_custom_settings[contact_email_admin_doc]', array(
@@ -195,7 +195,7 @@ function theme_customize_register($wp_customize) {
 	//CEL
 	$wp_customize->add_setting('theme_custom_settings[contact_cel]', array(
 		'default' => '',
-		'type' => 'option'
+		'type' => 'theme_mod'
 	));
 	
 	$wp_customize->add_control('theme_custom_settings[contact_cel]', array(
@@ -216,7 +216,7 @@ function theme_customize_register($wp_customize) {
 	//Telefono 1 
 	$wp_customize->add_setting('theme_custom_settings[contact_tel]', array(
 		'default' => '',
-		'type' => 'option'
+		'type' => 'theme_mod'
 	));
 	
 	$wp_customize->add_control('theme_custom_settings[contact_tel]', array(
@@ -229,7 +229,7 @@ function theme_customize_register($wp_customize) {
 	//Telefono 2 
 	$wp_customize->add_setting('theme_custom_settings[contact_tel_2]', array(
 		'default' => '',
-		'type' => 'option'
+		'type' => 'theme_mod'
 	));
 	
 	$wp_customize->add_control('theme_custom_settings[contact_tel_2]', array(
@@ -250,7 +250,7 @@ function theme_customize_register($wp_customize) {
 	/* Direccion */
 	$wp_customize->add_setting('theme_custom_settings[contact_address]', array(
 		'default' => '',
-		'type' => 'option'
+		'type' => 'theme_mod'
 	));
 	
 	$wp_customize->add_control('theme_custom_settings[contact_address]', array(
@@ -270,7 +270,7 @@ function theme_customize_register($wp_customize) {
 	//Ubicación
 	$wp_customize->add_setting('theme_custom_settings[contact_mapa]', array(
 		'default' => '',
-		'type' => 'option'
+		'type' => 'theme_mod'
 	));
 	
 	$wp_customize->add_control('theme_custom_settings[contact_mapa]', array(
@@ -283,7 +283,7 @@ function theme_customize_register($wp_customize) {
 	//Customizar Zoom de google maps
 	$wp_customize->add_setting('theme_custom_settings[contact_mapa_zoom]', array(
 		'default' => '',
-		'type' => 'option'
+		'type' => 'theme_mod'
 	));
 	
 	$wp_customize->add_control('theme_custom_settings[contact_mapa_zoom]', array(
@@ -303,7 +303,7 @@ function theme_customize_register($wp_customize) {
 	//textarea
 	$wp_customize->add_setting('theme_custom_settings[widget_nosotros]', array(
 		'default' => '',
-		'type' => 'option'
+		'type' => 'theme_mod'
 	));
 	
 	$wp_customize->add_control('theme_custom_settings[widget_nosotros]', array(
@@ -315,7 +315,7 @@ function theme_customize_register($wp_customize) {
 	//imagen
 	$wp_customize->add_setting('theme_custom_settings[image_nosotros]',array(
 		'default' => '',
-		'type'    => 'option'
+		'type'    => 'theme_mod'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Upload_Control($wp_customize,'widget_nosotros',array(
@@ -334,7 +334,7 @@ function theme_customize_register($wp_customize) {
 	//textarea
 	$wp_customize->add_setting('theme_custom_settings[widget_footer]', array(
 		'default' => '',
-		'type' => 'option'
+		'type' => 'theme_mod'
 	));
 	
 	$wp_customize->add_control('theme_custom_settings[widget_footer]', array(
@@ -347,7 +347,7 @@ function theme_customize_register($wp_customize) {
 	/* THEMA SERVICIOS - Customizar Información Servicios */
 	$wp_customize->add_setting('theme_custom_settings[widget_footer_service]', array(
 		'default' => '',
-		'type' => 'option'
+		'type' => 'theme_mod'
 	));
 	
 	$wp_customize->add_control('theme_custom_settings[widget_footer_service]', array(
@@ -367,7 +367,7 @@ function theme_customize_register($wp_customize) {
 	//Interbank
 	$wp_customize->add_setting('theme_custom_settings[theme_attention]', array(
 		'default' => '',
-		'type' => 'option'
+		'type' => 'theme_mod'
 	));
 	
 	$wp_customize->add_control('theme_custom_settings[theme_attention]', array(

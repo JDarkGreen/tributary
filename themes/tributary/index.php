@@ -2,7 +2,8 @@
 <!-- Header -->
 <?php 
 	get_header(); 
-	$options = get_option('theme_custom_settings'); 
+	$options   = get_option('theme_custom_settings'); 
+	$theme_mod = get_theme_mod('theme_custom_settings'); 
 ?>
 
 <!-- Incluir Slider de Portada -->
@@ -138,7 +139,7 @@
 
 					<!-- Contenedor facebook -->
 					<?php
-						if( isset($options['red_social_fb']) && !empty($options['red_social_fb']) ) :
+						if( isset( $theme_mod['red_social_fb'] ) && !empty( $theme_mod['red_social_fb'] ) ) :
 					?>
 						<section class="container__facebook">
 							<!-- Contebn -->
@@ -153,7 +154,7 @@
 								fjs.parentNode.insertBefore(js, fjs);
 							}(document, 'script', 'facebook-jssdk'));</script>
 
-							<div class="fb-page" data-href="<?= $options['red_social_fb']; ?>" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-height="565" data-hide-cover="false" data-show-facepile="true">
+							<div class="fb-page" data-href="<?= $theme_mod['red_social_fb']; ?>" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-height="565" data-hide-cover="false" data-show-facepile="true">
 							</div> <!-- /. fb-page-->
 						</section> <!-- /.container__facebook -->
 					<?php else: ?>

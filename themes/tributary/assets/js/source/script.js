@@ -45,28 +45,28 @@ var j = jQuery.noConflict();
 		/*|----------------------------------------------------------------------|*/
 		/*|-----  CAROUSEL HOME LIBRERIA  -----|*/
 		/*|----------------------------------------------------------------------|*/
-		var carousel_home = j("#carousel-home").carousel({ interval: 5000 , pause : "" });
+		var CarouselHome = j("#carousel-home").carousel({ interval: 5000 , pause : "" });
 
 		//Flechas de carousel Home
 		j(".js-btn-carousel-home").on("click", function(e){ e.preventDefault(); });
 		//Flecha Izquierda
 		j("#arrowSliderHome--prev").on("click",function(){
-			carousel_home.carousel('prev');
+			CarouselHome.carousel('prev');
 		});
 		//Flecha Derecha
 		j("#arrowSliderHome--next").on("click",function(){
-			carousel_home.carousel('next');
+			CarouselHome.carousel('next');
 		});
 
 		//Eventos - al comenzar carousel
-		carousel_home.on('slide.bs.carousel', function ( e ) {
+		CarouselHome.on('slide.bs.carousel', function ( e ) {
 
-			var current_item = j(this).find('.active');
+			var CurrentItem = j(this).find('.active');
 			// texto titulo
-			var title = current_item.find('h3');
+			var title = CurrentItem.find('h3');
 			title.addClass('contract'); 			
 			// texto parrafo
-			var paragraph = current_item.find('p');
+			var paragraph = CurrentItem.find('p');
 			paragraph.addClass('flipInY').css('opacity',0);
 
 		});
@@ -156,13 +156,13 @@ var j = jQuery.noConflict();
 				/* Velocidad */
 				var speed   = current.attr('data-speed') !== null && typeof(current.attr('data-speed') ) !== "undefined" ? current.attr('data-speed') : 1500;
 				/* Visibilidad */
-				var items_visible = current.attr('data-items') !== null && typeof(current.attr('data-items') ) !== "undefined" ? current.attr('data-items') : 3;
+				var ItemsVisible = current.attr('data-items') !== null && typeof(current.attr('data-items') ) !== "undefined" ? current.attr('data-items') : 3;
 				/**/
 				current.jCarouselLite({
 					vertical: true,
 					auto    : 1500,
 					speed   : parseInt(speed),
-					visible : parseInt(items_visible),	
+					visible : parseInt(ItemsVisible),	
 	  			});
 			});
 
