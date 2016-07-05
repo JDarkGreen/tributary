@@ -83,6 +83,13 @@ figure
 	100%
 		+opacity( 1 )
 
+//OVERLAYZOOM
++keyframes( overlayZoom )
+	0%
+		background-size: 100% 100%
+	100%
+		background-size: 140% 140%
+
 /***************************************************************************************/
 /**-------------------------- ANIMACIONES CON CLASES ----------------------------------**/
 /***************************************************************************************/
@@ -92,7 +99,13 @@ figure
 	+animation( contract 1200ms cubic-bezier( .5 , .5 , .5 , 1.5 ) ) 
 //clase contract
 .flipInY 
-	+animation( flipInY 4s cubic-bezier( 0 , 1 , 1 , 1 ) 1200ms ) 
+	+animation( flipInY 9s cubic-bezier( 0 , 1 , 1 , 1 ) 1200ms ) 
+//clase overlayZoom
+.overlayZoom
+	+animation( overlayZoom 10s ease-in ) 
+//clase overlayZoom
+.overlayZoomAlternate
+	+animation( overlayZoom 10s ease-in reverse ) 
 
 /***************************************************************************************/
 /**-- SECCIONES - PAGINAS EN COMUN  --------------------------------------------------**/
@@ -146,20 +159,32 @@ figure
 //+Banners
 //++Banner de Páginas
 .pageCommon__banner
+	font-family: "Roboto Condensed" , sans-serif
 	//Imagen
 	figure 
 		background-size: cover 
-		height         : 120px 
+		height         : 142px 
 //+++Título
 .pageCommon__banner__title
-	bottom           : 10px
-	color            : white
-	font-size        : 30px
-	font-weight      : 700
-	margin           : 0	
-	position         : absolute
-	right            : 15%
-	+text-shadow( 1px 1px 4px black )
+	//+text-shadow( 1px 1px 4px black )
+	color      : $theme_blue
+	font-size  : 35px
+	font-weight: 700
+	left       : 5%
+	margin     : -16px auto 0	
+	position   : absolute
+	top        : 50%
+	//before content
+	&:before 
+		background: $theme_blue
+		bottom    : 0
+		content   : ""
+		height    : 4px 
+		left      : 0
+		margin    : 0 auto
+		position  : absolute
+		right     : 0
+		width     : 82px 
 
 //++Banner de Servicios
 .sectionCommon__banner__services
@@ -172,6 +197,7 @@ figure
 	+box-shadow( inset 0 0 0 0 transparent )
 	+transition( color 1000ms ease-in , box-shadow 750ms ease-in-out )
 	background: $theme_guinda
+	border    : 1px solid transparent
 	color     : white 
 	display   : inline-block 
 	font-size : 14px 
@@ -185,11 +211,11 @@ figure
 		text-decoration: none 
 	&:hover 
 		+box-shadow( inset 300px 0 0 0 white )
-		color: $theme_guinda
-
+		border: 1px solid $theme_guinda
+		color : $theme_guinda
 
 //+TITULOS
-//++ Titulo de Seccion de Pagina
+//++ Titulo de Pagina
 .titleCommon__page
 	line-height: 1em 
 	margin     : 0 auto 25px
@@ -209,6 +235,12 @@ figure
 			position  : absolute
 			right     : 0
 			width     : 124px
+
+//++ Título de seccion de paginas
+.pageSectionCommon__title
+	font-family: "Roboto Condensed" , sans-serif
+	font-size  : 20px 
+	
 
 //IMAGEN NOT BLUR ( NO DIFUMINADA )
 .imgNotBlur
@@ -248,6 +280,7 @@ figure
 //BOTÓN HACIA ARRIBA 
 #arrow-up-page
 	+transition( all 500ms ease )
+	background: rgba( 0,0,0, .5 )
 	color     : white 
 	display   : none 
 	font-size : 18px
@@ -387,7 +420,7 @@ figure
 /***************************************************************************************/
 
 #sb-site
-	padding: 100px 0 0 0
+	//padding: 100px 0 0 0
 
 /***************************************************************************************/
 /**--  WRAPPER GENERAL ---------------------------------------------------------------**/
@@ -407,17 +440,34 @@ figure
 		//Carousel Item
 		.carousel-item
 			background-repeat    : no-repeat
-			background-size      : cover 
-			height               : 350px
+			background-size      : 100% 100%
+			height               : 488px
+			+transition( 1s ease-in-out left !important )
+
 			//Información Caption Ti´tulo y parrafp
 			.carousel-caption
+				font-family: "Roboto",sans-serif
+				left       : 10%
+				max-width  : 280px
+				padding    : 0
+				right      : inherit
+				text-align : left
+				top        : 30%
 				h3 , p 
 					line-height: 1em 
 				h3 
-					font-weight: 600
+					color      : $theme_blue
+					font-weight: 700
 				p 
-					font-family: "Bebas"
-					font-size  : 30px 
+					font-size  : 30px
+
+/* Flechas de Slider */
+.arrowSliderHome
+	margin: -20px auto 0
+.arrowSliderHome--prev
+	left : 2%
+.arrowSliderHome--next 
+	right: 2%
 	
 //SECCIÓN DE SERVICIOS
 .pageInicio__services
@@ -510,6 +560,27 @@ figure
 	height: 445px 
 	width : 100%
 
+/***************************************************************************************/
+/**--  PAGINA NOSOTROS  --------------------------------------------------------------**/
+/***************************************************************************************/
+
+// SECCIÓN DESCRIPCIÓN
+.pageNosotros__description
+	background: $theme_gray_claro
+	padding   : 80px 0
+
+/* Contenido de texto */
+.pageNosotros__content
+	font-family: "Roboto Condensed" , sans-serif 
+	/* titulos */
+	h1 , h2 , h3
+		font-size: 26px  
+	/* Subtitulo */
+	h4, h5 ,h6
+		font-size: 19px
+	/* P+arrafp */
+	p 
+		font-size: 18px
 
 /***************************************************************************************/
 /**--  MAIN FOOTER  ------------------------------------------------------------------**/
@@ -527,14 +598,25 @@ figure
 /* Lista de Datos */
 .mainFooter__list-data
 	list-style-type: none 
+	margin         : 0 10% 
 	padding        : 0 0 0 35px
 	li 
 		display  : flex
 		flex-wrap: wrap
+		//Icono
 		i 
 			height: 20px 
-			margin: 0 6px 0 -30px
+			margin: 0 11px 0 -30px
 			width : 20px 
+		//Párrafo
+		p 
+			margin: 0 auto 5px
+			width : 99%
+
+/* Item de Footer contiene informaciones */
+.mainFooter__item
+	border-right: 2px solid rgba( 255,255,255 , .4 )
+	height      : 160px 
 
 //++Seccion de Informacion
 .mainFooter__information
@@ -543,6 +625,11 @@ figure
 //++Seccion de Desarrollo
 .mainFooter__develop
 	background: $theme_blue
+	font-size : 13px 
+	padding   : 5px 0
+	/* Link */
+	a 
+		color: white
 
 
 

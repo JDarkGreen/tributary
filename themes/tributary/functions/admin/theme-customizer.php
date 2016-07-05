@@ -39,8 +39,9 @@ function theme_customize_register($wp_customize) {
 		'description' => __('Sección Misión y Visión Empresa', LANG),
 		'priority' => 41
 	));	
+
 	/* HISTORIA */
-	$wp_customize->add_setting('theme_custom_settings[text_historia]', array(
+	/*$wp_customize->add_setting('theme_custom_settings[text_historia]', array(
 		'default' => '',
 		'type' => 'theme_mod'
 	));
@@ -49,7 +50,8 @@ function theme_customize_register($wp_customize) {
 		'section'  => 'theme_mision_vision',
 		'settings' => 'theme_custom_settings[text_historia]',
 		'type'     => 'textarea'
-	));	
+	));	*/
+
 	/* MISION */
 	$wp_customize->add_setting('theme_custom_settings[text_mision]', array(
 		'default' => '',
@@ -72,8 +74,9 @@ function theme_customize_register($wp_customize) {
 		'settings' => 'theme_custom_settings[text_vision]',
 		'type'     => 'textarea'
 	));	
+	
 	/* VALORES */
-	$wp_customize->add_setting('theme_custom_settings[text_valores]', array(
+	/*$wp_customize->add_setting('theme_custom_settings[text_valores]', array(
 		'default' => '',
 		'type' => 'theme_mod'
 	));
@@ -82,7 +85,7 @@ function theme_customize_register($wp_customize) {
 		'section'  => 'theme_mision_vision',
 		'settings' => 'theme_custom_settings[text_valores]',
 		'type'     => 'textarea'
-	));
+	)); */
 
 	/*|-----------------------------------------------------------------------|*/
 	/*|-----------------------------------------------------------------------|*/
@@ -294,7 +297,7 @@ function theme_customize_register($wp_customize) {
 	));		
 
 	//Customizar WIDGET NOSOTROS
-	$wp_customize->add_section('theme_widget_nosotros', array(
+	/*$wp_customize->add_section('theme_widget_nosotros', array(
 		'title' => __('Sección Nosotros', LANG),
 		'description' => __('Sección Nosotros', LANG),
 		'priority' => 40
@@ -322,60 +325,13 @@ function theme_customize_register($wp_customize) {
 		'label'    => __('Imagen Nosotros', LANG),
 		'section'  => 'theme_widget_nosotros',
 		'settings' => 'theme_custom_settings[image_nosotros]',
-	)));	
+	)));
 
-	//Customizar Informacion Footer
-	$wp_customize->add_section('theme_widget_footer', array(
-		'title' => __('Sección Footer', LANG),
-		'description' => __('Sección Footer', LANG),
-		'priority' => 41
-	));
-	
-	//textarea
-	$wp_customize->add_setting('theme_custom_settings[widget_footer]', array(
-		'default' => '',
-		'type' => 'theme_mod'
-	));
-	
-	$wp_customize->add_control('theme_custom_settings[widget_footer]', array(
-		'label'    => __('Escribe contenido en sección FOOTER', LANG),
-		'section'  => 'theme_widget_footer',
-		'settings' => 'theme_custom_settings[widget_footer]',
-		'type'     => 'textarea'
-	));
+	*/
 
-	/* THEMA SERVICIOS - Customizar Información Servicios */
-	$wp_customize->add_setting('theme_custom_settings[widget_footer_service]', array(
-		'default' => '',
-		'type' => 'theme_mod'
-	));
-	
-	$wp_customize->add_control('theme_custom_settings[widget_footer_service]', array(
-		'label'    => __('Escribe Servicios en sección FOOTER', LANG),
-		'section'  => 'theme_widget_footer',
-		'settings' => 'theme_custom_settings[widget_footer_service]',
-		'type'     => 'textarea'
-	));	
 
-	//Customizar Horario de Atención
-	$wp_customize->add_section('theme_attention', array(
-		'title' => __('Horarios de Atención', LANG),
-		'description' => __('Sección de Horarios de Atención', LANG),
-		'priority' => 42
-	));
+
 	
-	//Interbank
-	$wp_customize->add_setting('theme_custom_settings[theme_attention]', array(
-		'default' => '',
-		'type' => 'theme_mod'
-	));
-	
-	$wp_customize->add_control('theme_custom_settings[theme_attention]', array(
-		'label'    => __('Escribe el o los horarios de atención al cliente:', LANG),
-		'section'  => 'theme_attention',
-		'settings' => 'theme_custom_settings[theme_attention]',
-		'type'     => 'textarea'
-	));	
 
 
 }	

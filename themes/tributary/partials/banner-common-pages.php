@@ -8,11 +8,11 @@
 		<?php 
 			$img_banner = get_post_meta ($banner->ID, 'input_img_banner_'.$banner->ID , true); 
 			if( empty($img_banner) || $img_banner == -1 ) {
-				$img_banner = "https://placeimg.com/1920/443/any";
+				$img_banner = "https://placeimg.com/1920/202/any";
 			}
 		?>
 		<figure style='background: url("<?= $img_banner; ?>")'>
-			<img src="<?= $img_banner ?>" alt="banner-nosotros-empresa-pbg" class="img-fluid hidden-xs-down" />
+			<!--img src="<?= $img_banner ?>" alt="banner-nosotros-empresa-tributary" class="img-fluid hidden-xs-down" /-->
 		</figure>
 
 		<!-- Título de la pagina posicion absoluta -->

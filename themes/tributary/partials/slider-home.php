@@ -23,12 +23,16 @@
 	
 	<!-- Contenedor de bannner   -->
 	<section id="carousel-home" class="pageInicio__slider carousel slide" data-ride="carousel">
-
+		
+		<!-- Indicadores o dots  -->
+		<?php /*
 		<ol class="carousel-indicators">
 		<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
 	  	<li data-target="#carousel-home" data-slide-to="<?= $j ?>" class="<?= $j == 0 ? 'active' : '' ?>"></li>
 		<?php $j++; endwhile; wp_reset_postdata(); ?>
-	  </ol> <!-- /.carousel-indicators -->
+	  	</ol> <!-- /.carousel-indicators -->
+
+	  	*/ ?>
 
 		<!-- Wrapper for Carousel -->
 		<div class="carousel-inner" role="listbox">
@@ -48,19 +52,26 @@
 		    <div class="carousel-item <?= $i == 0 ? 'active' : '' ?>" style='background-image: url("<?= $feat_image; ?>")'>
 				
 				<!-- Imagen -->
-				<img src="<?= $feat_image; ?>" alt="" class="img-fluid hidden-xs-down">
+				<!--img src="<?= $feat_image; ?>" alt="" class="img-fluid hidden-xs-down"-->
 
 		    	<!-- Caption o Información -->
-					<div class="carousel-caption">
+					<div class="carousel-caption text-xs-left">
 	    			<!-- Título -->
 	    			<?php 
 	    				//$title    = explode(" ", get_the_title() );
 	    				//$title1   = array_slice( $title , 0 , 2 ) ;
 	    				//$title2   = array_slice( $title , 2 ) ;
 	    			?>
-	    			<h3><?= get_the_title(); ?></h3> 
+	    			<h3 class="text-uppercase"><?= get_the_title(); ?></h3> 
 	    			<!-- Separación en Desktop --> <br class="hidden-xs-down" />
-	    			<p class="text-uppercase"><?= get_the_content(); ?></p>
+
+	    			<!-- Botón de Contacto -->
+	    			<a href="#" class="btnCommon__show-more text-uppercase"><?php _e( "contáctanos" , LANG ); ?></a>
+
+	    			<!-- Subtitulo o párrafo  -->
+	    			<!--p class="text-uppercase"><?= get_the_content(); ?></p-->
+
+
 	  			</div>	<!-- /.carousel-caption -->    
 
 		    </div> <!-- /.arousel-item -->
@@ -72,16 +83,16 @@
 
 	
 	<!-- Seccion de Flechas de Carousel -->
-	<a href="#" id="arrowSliderHome--prev" class="js-btn-carousel-home arrowSliderHome arrowSliderHome--prev">
+	<a href="#" id="arrowSliderHome--prev" class="js-btn-carousel-home arrowSliderHome arrow__common-slider arrowSliderHome--prev">
 		<i class="fa fa-chevron-left" aria-hidden="true"></i>
 	</a>	
 
-	<a href="#" id="arrowSliderHome--next" class="js-btn-carousel-home arrowSliderHome arrowSliderHome--next">
+	<a href="#" id="arrowSliderHome--next" class="js-btn-carousel-home arrowSliderHome arrow__common-slider arrowSliderHome--next">
 		<i class="fa fa-chevron-right" aria-hidden="true"></i>
 	</a>	
 
 	<!-- Imagen Posterior Lobo -->
-	<div class="pageInicio__slider__image">
+	<!--div class="pageInicio__slider__image">
 		<img src="<?= IMAGES ?>/img_background/vector_paracas_sunset_lima_peru.png" alt="paracas-sunset-reserva-lima-peru" class="img-fluid" />
 	</div> <!-- /.pageInicio__slider__image -->
 	

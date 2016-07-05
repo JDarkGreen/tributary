@@ -45,7 +45,7 @@ var j = jQuery.noConflict();
 		/*|----------------------------------------------------------------------|*/
 		/*|-----  CAROUSEL HOME LIBRERIA  -----|*/
 		/*|----------------------------------------------------------------------|*/
-		var CarouselHome = j("#carousel-home").carousel({ interval: 5000 , pause : "" });
+		var CarouselHome = j("#carousel-home").carousel({ interval: 7000 , pause : "" });
 
 		//Flechas de carousel Home
 		j(".js-btn-carousel-home").on("click", function(e){ e.preventDefault(); });
@@ -58,16 +58,48 @@ var j = jQuery.noConflict();
 			CarouselHome.carousel('next');
 		});
 
+		/* VARIABLE DE CONTROL */
+		var controlCarousel = 0;
+
 		//Eventos - al comenzar carousel
 		CarouselHome.on('slide.bs.carousel', function ( e ) {
 
 			var CurrentItem = j(this).find('.active');
+ 
 			// texto titulo
 			var title = CurrentItem.find('h3');
-			title.addClass('contract'); 			
+			//title.addClass('contract'); 
+			title.addClass('flipInY').css('opacity',0);
+
 			// texto parrafo
 			var paragraph = CurrentItem.find('p');
 			paragraph.addClass('flipInY').css('opacity',0);
+
+		});
+
+		//Eventos - al finalizar carousel
+		CarouselHome.on('slid.bs.carousel', function ( e ) { 
+
+			//Aumentar variable de control
+			controlCarousel = controlCarousel > 1 ? controlCarousel = 0 : controlCarousel; 
+
+			/* Extraer elemento actual activo */
+			var CurrentItem = j(this).find('.active');
+
+			/* Colocar Imagen */
+			if( controlCarousel == 0 )
+			{
+				if( !CurrentItem.hasClass('overlayZoom') ) 
+					CurrentItem.addClass("overlayZoom");
+			}else{
+
+				if( !CurrentItem.hasClass('overlayZoomAlternate') ) 
+				CurrentItem.addClass("overlayZoomAlternate");
+			}
+
+			/* Aumentar la variable de control alert( controlCarousel ); */
+			controlCarousel++;
+
 
 		});
 
@@ -96,8 +128,11 @@ var j = jQuery.noConflict();
 				/* Valor de Márgenes */
 				var Margins = current.attr('data-margins') !== null && typeof(current.attr('data-margins') ) !== "undefined"  ? current.attr('data-margins') : 10;	
 
+				/* Habilitar autoplay */
+				var Autoplay = current.attr('data-autoplay') !== null && typeof( current.attr('data-autoplay') ) !== "undefined"  && current.attr('data-autoplay') !== "false" ? true : false;
+
 				/* Habilitar dots */
-				var Dot = current.attr('data-dots') !== null && typeof(current.attr('data-dots') ) !== "undefined" ? current.attr('data-dots') : null;
+				var Dot = current.attr('data-dots') !== null && typeof( current.attr('data-dots') ) !== "undefined" && current.attr('data-dots') !== "false" ? true : false;
 
 				/* Generar el carousel */
 				current.owlCarousel({
@@ -106,16 +141,19 @@ var j = jQuery.noConflict();
 					loop           : true,
 					margin         : parseInt( Margins ),
 					nav            : false,
-					autoplay       : true,
+					autoplay       : Autoplay,
 					responsiveClass: true,
-					mouseDrag      : false,
+					mouseDrag      : true,
 					autoplayTimeout: 2500,
 					fluidSpeed     : 2000,
 					smartSpeed     : 2000,
-					dots           : Boolean( Dot ),
+					dots           : Dot,
 					responsive:{
-				      	640:{
+				      	320:{
 				            items: parseInt( Itemsresponsive )
+				        },
+				        640:{
+				            items: parseInt( Items )
 				        },
 			    	}	
 				});

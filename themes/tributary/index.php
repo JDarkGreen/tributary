@@ -28,7 +28,7 @@
 				* data-margins = margin_in_pixels , data-dots = true or false
 				*/
 			?>
-			<div id="carousel-service" class="pageInicio_gal_services js-carousel-gallery" data-items="1" data-items-responsive="3" data-margins="40">
+			<div id="carousel-service" class="pageInicio_gal_services js-carousel-gallery" data-items="3" data-items-responsive="1" data-margins="40">
 				<!-- Obtener todas las habitaciones -->
 				<?php  
 					$args = array(
