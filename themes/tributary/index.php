@@ -85,7 +85,7 @@
 					<!-- Titulo  --> <h2 class="titleCommon__page text-uppercase"> <span class="relative"> <?php _e( "blog" , LANG ); ?> </span> </h2>
 
 					<?php  
-						//Obtener todos los posts
+						//Obtener todos los 6 posts ultimos
 						$args = array(
 							'order'          => 'ASC',
 							'orderby'        => 'menu_order',

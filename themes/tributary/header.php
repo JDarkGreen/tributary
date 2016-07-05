@@ -36,7 +36,7 @@
 	?>
 
 <!-- Header -->
-<header class="mainHeader sb-slide">
+<header class="mainHeader">
 
 	<!-- Contenedor Version Desktop -->
 	<div class="mainHeader__container hidden-xs-down relative">

@@ -1,7 +1,7 @@
 <?php /* Pagina Single */ ?>
 
 <!-- Header -->
-<?php get_header(); $options = get_option('theme_custom_settings');  ?>
+<?php get_header(); $theme_mod = get_option('theme_custom_settings');  ?>
 
 <!-- Get Header -->
 <?php get_header(); ?>
@@ -30,9 +30,9 @@
 					) );
 				?>
 
-				<article class="pageWrapper__article item-preview-post">
+				<article class="pageBlog__article item-preview-post">
 
-					<!-- Titulo --> <h3 class="titleDescriptionSection"><?php _e( $post->post_title , LANG ); ?></h3>
+					<!-- Titulo --> <h3 class="text-uppercase"><?php _e( $post->post_title , LANG ); ?></h3>
 
 					<!-- Imagen -->
 					<figure>
@@ -40,6 +40,9 @@
 							<?= get_the_post_thumbnail( $post->ID , 'full' , array('class'=>'img-fluid imgNotBlur') ); ?>
 						<?php endif; ?>
 					</figure> <!-- /. -->
+					
+					<!-- Separación -->
+					<p class="clearfix"></p><p class="clearfix"></p>
 
 					<!-- Contenido -->
 					<div class="text-justify">
@@ -56,37 +59,39 @@
 					<!-- Sección Compartir en Redes Sociales -->
 					<?php include( locate_template("partials/section-share-type-post.php") ); ?>
 
-				</article> <!-- /. -->
+				</article> <!-- /.pageBlog__article -->
 
 			</main> <!-- /.col-xs-12 -->
 			<!-- Sidebar  Ocultar en mobile -->
 			<aside class="col-md-4 hidden-xs-down">
 				
-				<!-- Sección de Categorías -->
-				<section class="sectionLinks__sidebar">
-					<!-- Titulo --> <h2 class="text-capitalize"><?php _e( "Categorías" , LANG ); ?></h2>
-
+				<!-- Sidebar de Categorias -->
+				<section class="sidebarCommon">
+					<!-- Titulo de Sidebar --> <h2 class="titleSidebar"> <?php _e( "Categorías" , LANG ); ?></h2>
+					
+					<!-- Sección de Categorías -->
 					<?php foreach( $categorias as $categoria ) : ?>
-						<a href="<?= get_term_link( $categoria ); ?>" class="link-to-item <?= $first_cat->term_id == $categoria->term_id ? 'active' : '' ?>"><?php _e( $categoria->name , LANG  ); ?></a>
+						<a href="<?= get_term_link( $categoria ); ?>" class="link-to-item <?= $first_cat->term_id == $categoria->term_id ? 'active' : '' ?>"><?php _e( $categoria->name , LANG  ); ?>
+						<!-- Icon  -->
+						<i class="fa fa-chevron-right" aria-hidden="true"></i>
+						</a>
 					<?php endforeach; ?>
 
-				</section> <!-- /.sectionLinks__sidebar -->
+				</section> <!-- /.sidebarCommon -->
 				
-				<!-- Sidebar Activo -->
-				<?php if ( is_active_sidebar( 'sidebar-publicidad-hotel' ) ) : ?>
-					<?php dynamic_sidebar( 'sidebar-publicidad-hotel' ); ?>
-				<?php else: __("Actualizando contenido" , LANG ) ; endif; ?>
-
+				<!-- Separacion  -->		
+				<p class="clearfix"></p>
+				<p class="clearfix"></p>
+				
 				<!-- Sección Facebook -->
 				<?php
-					if( isset($options['red_social_fb']) && !empty($options['red_social_fb']) ) :
+					if( isset($theme_mod['red_social_fb']) && !empty($theme_mod['red_social_fb']) ) :
 				?>
 					<section class="container__facebook">
 						
-						<!-- Titulo -->
-						<h2 class="titleWidget text-uppercase"><?php _e( "Facebook", LANG ); ?></h2>			
-			
-						<!-- Contebn -->
+						<!-- Titulo  --> <h2 class="titleSidebar"> <?php _e( "Facebook" , LANG ); ?></h2>
+
+						<!-- Content -->
 						<div id="fb-root" class=""></div>
 
 						<!-- Script -->
@@ -98,7 +103,7 @@
 							fjs.parentNode.insertBefore(js, fjs);
 						}(document, 'script', 'facebook-jssdk'));</script>
 
-						<div class="fb-page" data-href="<?= $options['red_social_fb']; ?>" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-height="500" data-hide-cover="false" data-show-facepile="true">
+						<div class="fb-page" data-href="<?= $theme_mod['red_social_fb']; ?>" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-height="500" data-hide-cover="false" data-show-facepile="true">
 						</div> <!-- /. fb-page-->
 					</section> <!-- /.container__facebook -->
 				<?php else: ?>

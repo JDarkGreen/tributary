@@ -27,26 +27,20 @@ pertenece la pagina actual a un custom post type */
 		// If the menu item URL contains the current post types slug add the current-menu-item class
 		if (strpos($menu_slug, $current_post_type_slug) !== false) {
 		
-		   $classes[] = 'current-menu-item';
+		   $classes[] = 'current-menu-this-item';
 		
 		}
-		
-		//Si el tipo de post es tour y está en la página de articulos activar este item
-		if( get_post_type( $post_id ) === "tours" && ( strpos($menu_slug, "tour") !== false ) )
-		{
-			$classes[] = 'current-menu-item';
-		}			
 
 		//Si el tipo de post es attachment  y está en la página de galeria activar este item
 		if( ( get_post_type( $post_id ) === "galery-images" || $current_post_type === "image_category" ) && ( strpos($menu_slug, "galeria") !== false ) )
 		{
-			$classes[] = 'current-menu-item';
+			$classes[] = 'current-menu-this-item';
 		}		
 
 		//Si el tipo de post es post y está en la página de articulos activar este item
 		if( get_post_type( $post_id ) === "post" && ( strpos($menu_slug,"blog") !== false ) )
 		{
-			$classes[] = 'current-menu-item';
+			$classes[] = 'current-menu-this-item';
 		}
 		
 		// Return the corrected set of classes to be added to the menu item

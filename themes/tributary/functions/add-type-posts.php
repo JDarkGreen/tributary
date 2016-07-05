@@ -56,14 +56,14 @@ function create_post_type(){
 	
 	$labels3 = array(
 		'name'               => __('Clientes'),
-		'singular_name'      => __('Cliente'),
-		'add_new'            => __('Nuevo Cliente'),
-		'add_new_item'       => __('Agregar nuevo Cliente'),
-		'edit_item'          => __('Editar Cliente'),
-		'view_item'          => __('Ver Cliente'),
-		'search_items'       => __('Buscar Clientes'),
-		'not_found'          => __('Cliente no encontrado'),
-		'not_found_in_trash' => __('Cliente no encontrado en la papelera'),
+		'singular_name'      => __('Sector o Categoría'),
+		'add_new'            => __('Nuevo Sector o Categoría'),
+		'add_new_item'       => __('Agregar nuevo Sector o Categoría'),
+		'edit_item'          => __('Editar Sector o Categoría'),
+		'view_item'          => __('Ver Sector o Categoría'),
+		'search_items'       => __('Buscar Sector o Categoría'),
+		'not_found'          => __('Sector o Categoría no encontrado'),
+		'not_found_in_trash' => __('Sector o Categoría no encontrado en la papelera'),
 	);
 
 	$args3 = array(

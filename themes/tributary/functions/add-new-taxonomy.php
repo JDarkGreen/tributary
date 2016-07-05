@@ -32,7 +32,7 @@ function create_category_taxonomy() {
     'rewrite'          => array( 'slug' => 'servicio-category' ),
   ));
 
-/* categorias clientes */
+/* categorias clientes 
   $labels2 = array(
     'name'             => __( 'Categoría Cliente'),
     'singular_name'    => __( 'Categoría Cliente'),
@@ -55,7 +55,7 @@ function create_category_taxonomy() {
     'show_admin_column'=> true,
     'query_var'        => true,
     'rewrite'          => array( 'slug' => 'cliente-category' ),
-  ));
+  )); */
 
   /* categorias Imagenes */
   $labels3 = array(

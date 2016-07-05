@@ -1,150 +1,224 @@
-<?php /* Template Name: Página Negocios y Ambientes Plantilla */ ?>
+<?php /* Single Name: Single Servicios Plantilla */ ?>
 
 <!-- Header -->
-<?php get_header(); $options = get_option('theme_custom_settings');  ?>
+<?php get_header(); $theme_mod = get_theme_mod('theme_custom_settings');  ?>
 
 <!-- Incluir Banner de Pagina -->
 <?php
-	global $post; //Objeto actual - Pagina 
-	$banner = $post;  // Seteamos la variable banner de acuerdo al post
+	global $post; //Objeto actual - o -Pagina 
+	$banner = $post;  // Seteamos la variable banner de acuerdo a la página
 	include( locate_template("partials/banner-common-pages.php") ); 
 ?>
 
-<!-- Seccion General -->
-<section class="pageWrapper pageBlog">
-	
+<!-- Contenedor Principal -->
+<main class="pageWrapper">
 	<div class="container">
-		<div class="row">
-
-			<!-- Articulo Principal -->
-			<main class="col-xs-12 col-md-8">
-
-				<?php 
-
-					/* Extraer todas las categorías padre */  
-					$categorias = get_categories( array(
-						'orderby' => 'name' , 'parent' => 0,
-					) );
-
-					/* Extraer la primera categoría */
-					$first_cat = $categorias[1];
-
-					/* Vamos a obtener todos los paquetes de tour y seleccionaremos el primero*/
-					$args = array(
-						'order'          => 'DESC',
-						'orderby'        => 'date',
-						'post_status'    => 'publish',
-						'post_type'      => 'post',
-						'posts_per_page' => -1,
-						'category_name'  => $first_cat->slug,
-					);
-					$articulos = get_posts( $args );
-					if( !empty( $articulos ) ) : 
-				?>
-
-				<article class="pageWrapper__article">
-
-					<!-- Titulo --> <h2 class="titleDescriptionSection"><?php _e( "Artículos de Interés" , LANG ); ?></h2>
-
-					<!-- Items de Artículos -->
-					<div class="row">
-						<?php $i = 0; foreach( $articulos as $articulo ) : ?>
-
-							<article class="item-preview-post col-xs-6">
-
-								<!-- Imagen Destacada --> <figure> 
-								<?php if( has_post_thumbnail( $articulo->ID ) ) : 
-									echo get_the_post_thumbnail( $articulo->ID , 'full' , array('class' => 'img-fluid imgNotBlur' ) );
-									endif;
-								?>
-								</figure> <!-- /.fin imagen -->
-
-								<!-- Titulo --> <h2 class="text-capitalize"><?php _e( $articulo->post_title , LANG ); ?></h2>
-								<!-- Extracto --> <div class="text-justify"> <?= apply_filters('the_content' , wp_trim_words( $articulo->post_content , 30 , '...' ) ); ?></div>
-
-								<!-- Seccion compartir y botón -->
-								<div class="">
-									<!-- Botón  --> <a href="<?= get_permalink( $articulo->ID ); ?>" class="btnCommon__show-more btnCommon__show-more--rojo text-uppercase pull-right"> <?php _e( 'ver más' , LANG  );  ?> </a>
-								</div> <!-- /. -->
-
-								<!-- Limpiar floats --> <div class="clearfix"></div>
-
-								<!-- Enviar Permalink -->
-								<?php $the_link_share = get_permalink( $articulo->ID ); ?>
-
-								<!-- Sección Compartir en Redes Sociales -->
-								<?php include( locate_template("partials/section-share-type-post.php") ); ?>
-
-							</article> <!-- /.item-preview-post -->
-
-							<!-- Linea Separadora -->
-							<?php if( $i % 2 != 0 ) : ?>
-								<!-- Limpiar floats --> <div class="clearfix"></div>
-								<div id="separator-line"></div>
-							<?php endif; ?>
-
-						<?php $i++; endforeach; ?>
-					</div> <!-- /.row -->	
-
-				</article> <!-- /. -->
-
-				<?php endif; ?>
-			</main> <!-- /.col-xs-12 -->
-
-			<!-- Sidebar  Ocultar en mobile -->
-			<aside class="col-md-4 hidden-xs-down">
+		
+		<!-- Seccion de Contenido -->
+		<section class="pageServicios__content">
+			<div class="row">
 				
-				<!-- Sección de Categorías -->
-				<section class="sectionLinks__sidebar">
-					<!-- Titulo --> <h2 class="text-capitalize"><?php _e( "Categorías" , LANG ); ?></h2>
+				<!-- Contenido -->
+				<div class="col-xs-8">
+					<section class="">
+						<?php 
 
-					<?php foreach( $categorias as $categoria ) : ?>
-						<a href="<?= get_term_link( $categoria ); ?>" class="link-to-item <?= $first_cat->term_id == $categoria->term_id ? 'active' : '' ?>"><?php _e( $categoria->name , LANG  ); ?></a>
-					<?php endforeach; ?>
+							/* Extraer todas las categorías padre */  
+							$categorias = get_categories( array(
+								'orderby' => 'name' , 'parent' => 0,
+							) );
 
-				</section> <!-- /.sectionLinks__sidebar -->
-				
-				<!-- Sidebar Activo -->
-				<?php if ( is_active_sidebar( 'sidebar-publicidad-hotel' ) ) : ?>
-					<?php dynamic_sidebar( 'sidebar-publicidad-hotel' ); ?>
-				<?php else: __("Actualizando contenido" , LANG ) ; endif; ?>
+							/* Extraer la primera categoría */
+							$first_cat = $categorias[0];
 
-				<!-- Sección Facebook -->
-				<?php
-					if( isset($options['red_social_fb']) && !empty($options['red_social_fb']) ) :
-				?>
-					<section class="container__facebook">
+							/* Vamos a obtener todos los paquetes de tour y seleccionaremos el primero*/
+							$args = array(
+								'order'          => 'DESC',
+								'orderby'        => 'date',
+								'post_status'    => 'publish',
+								'post_type'      => 'post',
+								'posts_per_page' => -1,
+								'category_name'  => $first_cat->slug,
+							);
+							$total_items = get_posts( $args );
+
+							/* numero de post con esta taxonomia */
+							$number_articulos = count( $total_items ); 
+
+							/* número de cuantos post quieres presentar por pagina */
+							$post_per_page  = 3;
+
+							/* Si el número de post es mayor a la cantidad por presentar entonces
+							* se hace un carousel */
+							if ( $number_articulos > $post_per_page ) : 
+
+								/* Wrapper for slider */
+	
+								/*
+								*  Attributos disponibles 
+								* data-items = number , data-items-responsive = number_mobile ,
+								* data-margins = margin_in_pixels , data-dots = true or false
+								* if data-autoplay false then not autoplay else true ;
+								*/
+							?>
+
+							<div id="carousel-blog" class="section__single_gallery js-carousel-gallery" data-items="1" data-items-responsive="1" data-margins="5" data-dots="false" data-autoplay="false" >
+
+								<?php  
+									/* división para saber el número total de paginación */
+									$number_items = floor( $number_articulos / $post_per_page );
+
+									$repeat_items = 1 +  $number_items; 
+
+									/* repeticiones */
+									for( $i = 0 ; $i < $repeat_items ; $i++ ){ 
+								?>  <!-- Seccion que contendrá los articulos o por la taxonomia categoria de proyecto por el numero de pagina seteado -->
+
+									<section class="pagePreview_post">
+										<?php 
+											/* argumentos y articulos */
+											$args2 = array(
+												'order'          => 'DESC',
+												'orderby'        => 'date',
+												'post_status'    => 'publish',
+												'post_type'      => 'post',
+												'posts_per_page' => $post_per_page,
+												'offset'         => $i * $post_per_page,
+												'category_name'  => $first_cat->slug,
+											);
+											/* articulos */
+											$articulos = get_posts( $args2 );
+											foreach( $articulos as $articulo ) :
+										?> <!--  Articulo -->
+											<article class="articles-item">
+												<!-- Imagen -->
+												<figure class="pull-md-left">
+													<a href="<?= get_permalink( $articulo->ID ); ?>">
+													<?php 
+														$image = get_the_post_thumbnail( $articulo->ID , 'full' , array('class'=>'img-fluid center-block imgNotBlur') ); 
+														if( !empty($image) ) : echo $image;
+														else:
+													?>
+														<img src="http://lorempixel.com/980/549/sports" alt="lorempixel" class="img-fluid center-block imgNotBlur" />
+													<?php endif; ?>
+													</a>
+												</figure><!-- /figure -->
+
+												<!-- Texto -->
+												<h3 class="articles-item-title text-uppercase">
+												<?php _e( $articulo->post_title , LANG ); ?></h3>
+												<!-- Extracto 30 palabras -->
+												<p class="articles-item-excerpt text-justify">
+												<?php _e( wp_trim_words( $articulo->post_content , 30 , ' ' ) , LANG ); ?>
+													<!-- leer más -->
+													<a class="read-more" href="<?= get_permalink( $articulo->ID ); ?>">Leer más </a>
+												</p>
+												<!-- Limpiar float --> <div class="clearfix"></div>
+											</article><!-- /.sectionPage__articles__item -->
+										<?php endforeach; ?>
+									</section> <!-- /.pagePreview_post -->		
+
+								<?php } /* end for */?>
+
+							</div> <!-- /. fin de contenedor para slider -->
+
+							<!-- Flechas de Carousel -->
+							<div class="containerArrowBlog relative">
+								<!-- Flecha Izquierda --> 
+								<a href="#" id="" class="arrow__common-slider js-carousel-prev arrowCarouselBlog-prev" data-slider="carousel-blog">
+									<i class="fa fa-chevron-left" aria-hidden="true"></i>
+								</a>								
+								<!-- Flecha Derecha --> 
+								<a href="#" id="" class="arrow__common-slider js-carousel-next arrowCarouselBlog-next" data-slider="carousel-blog">
+									<i class="fa fa-chevron-right" aria-hidden="true"></i>
+								</a>
+							</div> <!-- /. -->
 						
-						<!-- Titulo -->
-						<h2 class="titleWidget text-uppercase"><?php _e( "Facebook", LANG ); ?></h2>			
-			
-						<!-- Contebn -->
-						<div id="fb-root" class=""></div>
+						<!-- Sino hacer una seccion simple -->
+						<?php else: ?>
+							
+							<section class="pagePreview_post">
+								<?php 
+									/* argumentos y articulos */
+									$args2 = array(
+										'order'          => 'DESC',
+										'orderby'        => 'date',
+										'post_status'    => 'publish',
+										'post_type'      => 'post',
+										'posts_per_page' => -1,
+										'category_name'  => $first_cat->slug,
+									);
+									/* articulos */
+									$articulos = get_posts( $args2 );
+									foreach( $articulos as $articulo ) :
+								?> <!--  Articulo -->
+									<article class="articles-item">
+										<!-- Imagen -->
+										<figure class="pull-md-left">
+											<a href="<?= get_permalink( $articulo->ID ); ?>">
+												<?php 
+													$image = get_the_post_thumbnail( $articulo->ID , 'full' , array('class'=>'img-fluid center-block imgNotBlur') ); 
+													if( !empty($image) ) : echo $image;
+													else:
+												?>
+													<img src="http://lorempixel.com/980/549/sports" alt="lorempixel" class="img-fluid center-block imgNotBlur" />
+												<?php endif; ?>
+											</a> <!-- /end of link -->
+										</figure><!-- /figure -->
+										<!-- Texto -->
+										<h3 class="articles-item-title text-uppercase">
+										<?php _e( $articulo->post_title , LANG ); ?></h3>
+										<!-- Extracto 30 palabras -->
+										<p class="articles-item-excerpt text-justify">
+										<?php _e( wp_trim_words( $articulo->post_content , 30 , ' ' ) , LANG ); ?>
+											<!-- leer más -->
+											<a class="read-more" href="<?= get_permalink( $articulo->ID ); ?>">Leer más </a>
+										</p>
+										<!-- Limpiar float --> <div class="clearfix"></div>
+									</article><!-- /.sectionPage__articles__item -->
+								<?php endforeach; ?>
+							</section> <!-- /.pagePreview_post -->		
 
-						<!-- Script -->
-						<script>(function(d, s, id) {
-							var js, fjs = d.getElementsByTagName(s)[0];
-							if (d.getElementById(id)) return;
-							js = d.createElement(s); js.id = id;
-							js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5";
-							fjs.parentNode.insertBefore(js, fjs);
-						}(document, 'script', 'facebook-jssdk'));</script>
+						<?php endif; /* Fin de condicional */ ?> 	
 
-						<div class="fb-page" data-href="<?= $options['red_social_fb']; ?>" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-height="500" data-hide-cover="false" data-show-facepile="true">
-						</div> <!-- /. fb-page-->
-					</section> <!-- /.container__facebook -->
-				<?php else: ?>
-					<p class="text-xs-center">Opcion no habilitada temporalmente</p>
-				<?php endif; ?>	
 
-				<!-- Separador --> <p></p>			
 
-			</aside> <!-- /.col-md-4 hidden-xs-down -->
+					</section> <!-- /.section -->
+				</div> <!-- /.col-xs-8 -->
+				
+				<!-- Aside de Categoria -->
+				<div class="col-xs-4">
+					<!-- Sidebar de Categorias -->
+					<aside class="sidebarCommon">
+						<!-- Titulo de Sidebar --> <h2 class="titleSidebar"> <?php _e( "Categorías" , LANG ); ?></h2>
+						
+						<!-- Sección de Categorías -->
+						<?php foreach( $categorias as $categoria ) : ?>
+							<a href="<?= get_term_link( $categoria ); ?>" class="link-to-item <?= $first_cat->term_id == $categoria->term_id ? 'active' : '' ?>"><?php _e( $categoria->name , LANG  ); ?>
+							<!-- Icon  -->
+							<i class="fa fa-chevron-right" aria-hidden="true"></i>
+							</a>
+						<?php endforeach; ?>
 
-		</div> <!-- /.row -->
+					</aside> <!-- /.sidebarCommon -->
+				</div> <!-- /.col-xs-4 -->
+
+			</div> <!-- /.row -->
+		</section> <!-- /.pageNosotros__description -->	
+
 	</div> <!-- /.container -->
+</main> <!-- /.pageWrapper -->
 
-</section> <!-- /.pageRooms -->
+
+<div class="container">
+<?php 
+/*
+* Incluir template servicios
+*/ 
+include( locate_template("partials/banner-services.php") );
+?>	
+</div> <!-- /.container -->
+
 
 <!-- Footer -->
 <?php get_footer(); ?>
