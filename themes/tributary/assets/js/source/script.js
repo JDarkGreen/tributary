@@ -87,14 +87,18 @@ var j = jQuery.noConflict();
 			var CurrentItem = j(this).find('.active');
 
 			/* Colocar Imagen */
-			if( controlCarousel == 0 )
+			if( controlCarousel === 0 )
 			{
-				if( !CurrentItem.hasClass('overlayZoom') ) 
+				if( !CurrentItem.hasClass('overlayZoom') )
+				{
 					CurrentItem.addClass("overlayZoom");
+				} 
 			}else{
 
 				if( !CurrentItem.hasClass('overlayZoomAlternate') ) 
-				CurrentItem.addClass("overlayZoomAlternate");
+				{
+					CurrentItem.addClass("overlayZoomAlternate");
+				}
 			}
 
 			/* Aumentar la variable de control alert( controlCarousel ); */

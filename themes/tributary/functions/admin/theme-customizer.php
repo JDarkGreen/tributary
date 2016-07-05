@@ -63,10 +63,21 @@ function theme_customize_register($wp_customize) {
 		'settings' => 'theme_custom_settings[text_mision]',
 		'type'     => 'textarea'
 	));	
+	/* Imagen Misión */
+	$wp_customize->add_setting('theme_custom_settings[image_mision]', array(
+		'default' =>  IMAGES . '/nosotros/imagen_mision.jpg',
+		'type'    => 'theme_mod'
+	));
+	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'image_mision', array(
+		'label'    => __('Carga tu Imágen MISION: 300 x 318', LANG),
+		'section'  => 'theme_mision_vision',
+		'settings' => 'theme_custom_settings[image_mision]'
+	)));
+
 	/* VISION */
 	$wp_customize->add_setting('theme_custom_settings[text_vision]', array(
 		'default' => '',
-		'type' => 'theme_mod'
+		'type'    => 'theme_mod'
 	));
 	$wp_customize->add_control('theme_custom_settings[text_vision]', array(
 		'label'    => __('Escribe el texto VISIÓN', LANG),
@@ -74,6 +85,16 @@ function theme_customize_register($wp_customize) {
 		'settings' => 'theme_custom_settings[text_vision]',
 		'type'     => 'textarea'
 	));	
+	/* Imagen Visión */
+	$wp_customize->add_setting('theme_custom_settings[image_vision]', array(
+		'default' => IMAGES . '/nosotros/imagen_vision.jpg',
+		'type'    => 'theme_mod'
+	));
+	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'image_vision', array(
+		'label'    => __('Carga tu Imágen VISION: 300 x 318', LANG),
+		'section'  => 'theme_mision_vision',
+		'settings' => 'theme_custom_settings[image_vision]'
+	)));
 	
 	/* VALORES */
 	/*$wp_customize->add_setting('theme_custom_settings[text_valores]', array(
