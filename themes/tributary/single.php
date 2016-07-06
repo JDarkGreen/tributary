@@ -1,11 +1,9 @@
-<?php /* Pagina Single */ ?>
+<?php /* Pagina Single */ 
 
-<!-- Header -->
-<?php get_header(); $theme_mod = get_option('theme_custom_settings');  ?>
-
-<!-- Get Header -->
-<?php get_header(); ?>
-
+	get_header(); 
+	$options   = get_option('theme_custom_settings'); 
+	$theme_mod = get_theme_mod('theme_custom_settings'); 
+?>
 <!-- Incluir Banner de Pagina -->
 <?php
 	global $post;

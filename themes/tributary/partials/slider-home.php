@@ -66,7 +66,10 @@
 	    			<!-- Separación en Desktop --> <br class="hidden-xs-down" />
 
 	    			<!-- Botón de Contacto -->
-	    			<a href="#" class="btnCommon__show-more text-uppercase"><?php _e( "contáctanos" , LANG ); ?></a>
+	    			<?php /*Obtener página */ 
+						$this_page = get_page_by_path('contactanos'); 
+					?>
+	    			<a href="<?= get_permalink( $this_page->ID ); ?>" class="btnCommon__show-more text-uppercase"><?php _e( "contáctanos" , LANG ); ?></a>
 
 	    			<!-- Subtitulo o párrafo  -->
 	    			<!--p class="text-uppercase"><?= get_the_content(); ?></p-->

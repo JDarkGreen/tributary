@@ -125,12 +125,37 @@ function create_post_type(){
 		'menu_icon'   => 'dashicons-video-alt',
 	);
 
+	/*|>>>>>>>>>>>>>>>>>>>> STAFF  <<<<<<<<<<<<<<<<<<<<|*/
+	
+	$labels6 = array(
+		'name'               => __('Staff'),
+		'singular_name'      => __('Miembro'),
+		'add_new'            => __('Nuevo Miembro'),
+		'add_new_item'       => __('Agregar nuevo Miembro'),
+		'edit_item'          => __('Editar Miembro'),
+		'view_item'          => __('Ver Miembro'),
+		'search_items'       => __('Buscar Miembro'),
+		'not_found'          => __('Miembro no encontrado'),
+		'not_found_in_trash' => __('Miembro no encontrado en la papelera'),
+	);
+
+	$args6 = array(
+		'labels'      => $labels6,
+		'has_archive' => true,
+		'public'      => true,
+		'hierachical' => false,
+		'supports'    => array('title','editor','excerpt','custom-fields','thumbnail','page-attributes'),
+		'taxonomies'  => array('post-tag','category'),
+		'menu_icon'   => 'dashicons-groups',
+	);
+
 	/*|>>>>>>>>>>>>>>>>>>>> REGISTRAR  <<<<<<<<<<<<<<<<<<<<|*/
 	register_post_type( 'slider-home' , $args  );
 	register_post_type( 'servicio' , $args2 );
 	register_post_type( 'cliente' , $args3 );
-	register_post_type( 'galery-images' , $args4 );
-	register_post_type( 'galery-videos' , $args5 );
+	register_post_type( 'miembro' , $args6 );
+	//register_post_type( 'galery-images' , $args4 );
+	//register_post_type( 'galery-videos' , $args5 );
 
 	flush_rewrite_rules();
 }

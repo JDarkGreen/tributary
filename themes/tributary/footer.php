@@ -16,7 +16,7 @@
 							<!-- Logo -->
 							<h1 class="">
 								<a href="<?= site_url() ?>">
-									<img src="<?= IMAGES ?>/logo.png" alt="tributary" class="img-fluid center-block" />
+									<img src="<?= IMAGES ?>/logo_tributary_contabilidad_empresarial_lima_peru_2.png" alt="logo_tributary_contabilidad_empresarial_lima_peru_2" class="img-fluid center-block" />
 								</a>
 							</h1> <!-- /.lgoo -->
 							<!-- Titulo -->

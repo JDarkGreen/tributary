@@ -11,7 +11,7 @@
 				$img_banner = "https://placeimg.com/1920/202/any";
 			}
 		?>
-		<figure style='background: url("<?= $img_banner; ?>")'>
+		<figure style='background-image: url("<?= $img_banner; ?>")'>
 			<!--img src="<?= $img_banner ?>" alt="banner-nosotros-empresa-tributary" class="img-fluid hidden-xs-down" /-->
 		</figure>
 

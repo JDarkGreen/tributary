@@ -262,7 +262,7 @@ var j = jQuery.noConflict();
 
 		j('#form-contacto').parsley();
 
-		/*j("#form-contacto").submit( function(e){
+		j("#form-contacto").submit( function(e){
 			e.preventDefault();
 			//Subir el formulario mediante ajax
 			j.post( url + '/email/enviar.php', 
@@ -271,7 +271,7 @@ var j = jQuery.noConflict();
 				email  : j("#input_email").val(),
 				phone  : j("#input_phone").val(),
 				subject: j("#input_subject").val(),
-				message: j("#input_message").val(),
+				message: j("#input_consulta").val(),
 			},function(data){
 				alert( data );
 
@@ -279,11 +279,11 @@ var j = jQuery.noConflict();
 				j("#input_email").val("");
 				j("#input_phone").val("");
 				j("#input_subject").val("");
-				j("#input_message").val("");
+				j("#input_consulta").val("");
 
 				window.location.reload(false);
 			});			
-		}); */
+		}); 
 
 	});
 

@@ -1,4 +1,4 @@
-<?php /* Single Name: Single Servicios Plantilla */ ?>
+<?php /* Template Name: Página Blog Plantilla */ ?>
 
 <!-- Header -->
 <?php get_header(); $theme_mod = get_theme_mod('theme_custom_settings');  ?>

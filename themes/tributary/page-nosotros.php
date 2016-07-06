@@ -14,7 +14,7 @@
 ?>
 
 <!-- Contenedor Principal -->
-<main class="pageWrapper">
+<main class="">
 	
 	<!-- Primera Seccion de descripcion -->
 	<section class="pageNosotros__description">
@@ -41,6 +41,9 @@
 							$input_ids_img  = get_post_meta($post->ID, 'imageurls_'.$post->ID , true);
 							//convertir en arreglo
 							$input_ids_img  = explode(',', $input_ids_img ); 
+							//Eliminar numeros negativos
+							$remove_array   = array(-1);
+							$input_ids_img  = array_diff( $input_ids_img , $remove_array ); 
 
 							//Hacer loop por cada item de arreglo
 							foreach ( $input_ids_img as $item_img ) : 

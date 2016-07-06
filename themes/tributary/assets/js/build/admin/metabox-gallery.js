@@ -168,7 +168,9 @@ var j = jQuery.noConflict();
         var valores_array = input_data.val();
 
         //buscar y eliminar elemento id de imagen  del arreglo
-        valores_array = valores_array.replace( ',' + data_id_img , '' );
+        valores_array = valores_array.replace( data_id_img , ' ' );
+        valores_array = valores_array.replace( ", " , '' );
+        
         input_data.val( valores_array );
         /*var i = imageArray.indexOf(data_id_img);
         if(i != -1 ) { 

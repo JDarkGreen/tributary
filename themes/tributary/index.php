@@ -1,4 +1,3 @@
-
 <!-- Header -->
 <?php 
 	get_header(); 
@@ -100,7 +99,7 @@
 					* data-items = default 3 [number]
 					*/ 
 					?>
-					<div id="carousel-articles" class="pageInicio_slider_post js-carousel-vertical" data-items="3">
+					<div id="carousel-articles" class="pagePreview_post js-carousel-vertical" data-items="3">
 						<ul>
 							<?php foreach( $ultimos_posts as $u_post ) : ?>
 							<li>

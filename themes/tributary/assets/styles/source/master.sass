@@ -20,15 +20,16 @@
 
 //Color 
 
-$theme_gray       : #AEAEAE
-$theme_gray_claro : #EBE9EE
-$theme_gray_oscuro: #7F7F81
-$theme_guinda     : #A70032
-$theme_blue       : #003352
+$theme_gray          : #AEAEAE
+$theme_gray_semiclaro: #CDCDCD
+$theme_gray_claro    : #EBE9EE
+$theme_gray_oscuro   : #7F7F81
+$theme_guinda        : #A70032
+$theme_blue          : #003352
 
-$theme_facebook   : #3A5998
-$theme_twitter    : #00ABF1
-$theme_gplus      : #DB4B39
+$theme_facebook      : #3A5998
+$theme_twitter       : #00ABF1
+$theme_gplus         : #DB4B39
 
 
 /***************************************************************************************/
@@ -452,6 +453,9 @@ figure
 
 /*[ $HEADER PRINCIPAL ] */
 .mainHeader
+	/* Logo */
+	.logo 
+		margin: 0
 
 /*[ $BARRA DE INFORMACION ] */
 .mainHeader__info
@@ -625,13 +629,6 @@ figure
 .pageInicio__miscelaneo
 	padding: 50px 0 
 
-//SECCIÓN DE MAPA
-.pageContact__map
-	margin: 70px auto 0
-
-#canvas-map
-	height: 445px 
-	width : 100%
 
 /***************************************************************************************/
 /**--  PAGINA NOSOTROS  --------------------------------------------------------------**/
@@ -674,6 +671,19 @@ figure
 	p 
 		font-size: 18px
 
+
+/***************************************************************************************/
+/**--  PAGINA STAFF ----------------------------------------------------------------**/
+/***************************************************************************************/
+
+/* Item o artículo del miembro del staff */
+.articleItemStaff
+	font-family: "Roboto Condensed" , sans-serif
+	margin     : 0 15px 60px 
+	/* Para los párrafos */
+	p 
+		font-size  : 16px
+		line-height: 1.4em
 
 /***************************************************************************************/
 /**--  PAGINA CLIENTE ----------------------------------------------------------------**/
@@ -720,6 +730,61 @@ figure
 	h3 
 		font-size  : 30px 
 		font-weight: 600 
+
+/***************************************************************************************/
+/**--  PÁGINA CONTACTO ---------------------------------------------------------------**/
+/***************************************************************************************/
+
+/* Lista de Página Contacto */
+.pageContact__list-data
+	font-family    : "Roboto Condensed" , sans-serif 
+	list-style-type: none 
+	padding        : 0 0 0 35px
+	li 
+		display  : flex
+		flex-wrap: wrap
+		//Icono
+		i 
+			height: 20px 
+			margin: 0 11px 0 -30px
+			width : 20px 
+		//Párrafo
+		p 
+			margin: 0 auto 5px
+			width : 99%
+
+/* Separación Página de Contacto */
+#pageContact__separation
+	height: 1px 
+	margin: 44px auto
+
+/* Formulario de Contacto */
+.pageContacto__form
+	max-width: 380px 
+	width    : 100%
+
+/* Grupo inputs y textarea dentro de formulario */
+.pageContacto__form__group
+	margin: 0 auto 13px
+	/* inputs y texarea */
+	input , textarea
+		+border-radius( 4px )
+		border : 1px solid $theme_gray_semiclaro
+		color  : $theme_gray_oscuro
+		outline: 0
+		padding: 5px 7px 
+		width  : 100%
+	/* Solo texarea */
+	textarea
+		height    : 135px 
+		max-height: 135px 
+
+//SECCIÓN DE MAPA
+.pageContact__map
+
+#canvas-map
+	height: 400px 
+	width : 100%
 
 
 /***************************************************************************************/
