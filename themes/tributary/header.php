@@ -36,10 +36,9 @@
 	?>
 
 <!-- Header -->
-<header class="mainHeader">
 
-	<!-- Contenedor Version Desktop -->
-	<div class="mainHeader__container hidden-xs-down relative">
+<!-- Contenedor Version Desktop -->
+<header class="mainHeader hidden-xs-down relative">
 
 		<!-- Barra de Información -->
 		<section class="mainHeader__info">
@@ -122,10 +121,35 @@
 			</div> <!-- /.row -->
 
 		</div> <!-- /.container -->
-	
-	</div> <!-- /.mainHeader__container hidden-xs-down -->
 
-</header> <!-- /.mainHeader sb-slide -->
+</header> <!-- /.mainHeader  -->
+
+<!-- Contenedor Version Mobile -->
+<header class="mainHeader container-flex align-content hidden-sm-up sb-slide">
+
+	<!-- Icono Izquierda -->
+	<div id="toggle-left-nav" class="icon-header"> 
+		<i class="fa fa-bars" aria-hidden="true"></i> 
+	</div> <!-- /.icon-header -->	
+
+	<!-- Logo Principal -->
+	<h1 class="logo">
+		<a href="<?= site_url() ?>">
+			<?php if( !empty($theme_mod['logo']) ) : ?>
+				<img src="<?= $theme_mod['logo'] ?>" alt="<?= "-logo-" . bloginfo('name') ?>" class="img-fluid center-block" />
+			<?php else: ?>
+				<img src="<?= IMAGES ?>/logo.png" alt="<?= "-logo-" . bloginfo('name') ?>" class="img-fluid center-block" />
+			<?php endif; ?>
+		</a>
+	</h1> <!-- /.lgoo -->
+
+	<!-- Icono Izquierda -->
+	<div id="toggle-right-nav" class="icon-header"> 
+		<i class="fa fa-bars" aria-hidden="true"></i> 
+	</div> <!-- /.icon-header -->
+	
+</header> <!-- /.container-flex align-content hidden-sm-up -->
+
 
 <!-- Contenedor Izquierda Version Mobile -->
 <aside class="sb-slidebar sb-left sb-style-push">
@@ -139,6 +163,20 @@
 		?>						
 	</nav> <!-- /.mainNav -->  
 </aside> <!-- /.sb-slidebar sb-left sb-style-push -->
+
+<!-- Contenedor Derecha Version Mobile -->
+<section class="sb-slidebar sb-right sb-style-push">
+	<?php  
+		/* Extraer todas las categorías padre */  
+		$categorias = get_categories( array(
+			'orderby' => 'name' , 'parent' => 0,
+		) );
+		
+		/*Incluir plantilla de categorias */
+		include( locate_template("partials/sidebar-categories.php") ); 
+	?>
+</section> <!-- /.sb-slidebar sb-right sb-style-push -->
+
 
 <!-- Flecha Indicador hacia arriba -->
 <a href="#" id="arrow-up-page"><i class="fa fa-angle-up" aria-hidden="true"></i></a>

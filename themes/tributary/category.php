@@ -13,8 +13,9 @@
 	* ["taxonomy"] ["description"] ["parent"] ["count"] ["filter"] 
 	*/
 
-	$page         = get_page_by_path('proyectos');  //buscamos el objeto de acuerdo a la página galeria
+	$page         = get_page_by_path('blog');  //buscamos el objeto de acuerdo a la página galeria
 	$banner       = $page;  // Seteamos la variable banner de acuerdo al post
+	$banner_title = $current_term->name;  // Seteamos la variable titulo de acuerdo a la taxonomia
 	include( locate_template("partials/banner-common-pages.php") ); 
 ?>
 
@@ -27,7 +28,7 @@
 			<div class="row">
 				
 				<!-- Contenido -->
-				<div class="col-xs-8">
+				<div class="col-xs-12 col-md-8">
 					<section class="">
 						<?php 
 
@@ -191,7 +192,7 @@
 				</div> <!-- /.col-xs-8 -->
 				
 				<!-- Aside de Categoria -->
-				<div class="col-xs-4">
+				<div class="col-xs-4 hidden-xs-down">
 					<!-- Sidebar de Servicios -->
 					<aside class="sidebarCommon">
 						<!-- Titulo de Sidebar --> <h2 class="titleSidebar"> <?php _e( "Categorías" , LANG ); ?></h2>

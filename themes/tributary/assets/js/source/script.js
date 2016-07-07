@@ -2,6 +2,136 @@
 
 var j = jQuery.noConflict();
 
+/*|----------------------------------------------------------------------|*/
+/*|-----  CAROUSEL HOME LIBRERIA  -----|*/
+/*|----------------------------------------------------------------------|*/
+function carouselHomeSlider()
+{
+	var CarouselHome = j("#carousel-home").carousel({ interval: 7000 , pause : "" });
+
+	//Flechas de carousel Home
+	j(".js-btn-carousel-home").on("click", function(e){ e.preventDefault(); });
+	//Flecha Izquierda
+	j("#arrowSliderHome--prev").on("click",function(){
+		CarouselHome.carousel('prev');
+	});
+	//Flecha Derecha
+	j("#arrowSliderHome--next").on("click",function(){
+		CarouselHome.carousel('next');
+	});
+
+	/* VARIABLE DE CONTROL */
+	var controlCarousel = 0;
+
+	//Eventos - al comenzar carousel
+	CarouselHome.on('slide.bs.carousel', function ( e ) {
+
+		var CurrentItem = j(this).find('.active');
+
+		// texto titulo
+		var title = CurrentItem.find('h3');
+		//title.addClass('contract'); 
+		title.addClass('flipInY').css('opacity',0);
+
+		// texto parrafo
+		var paragraph = CurrentItem.find('p');
+		paragraph.addClass('flipInY').css('opacity',0);
+
+	});
+
+	//Eventos - al finalizar carousel
+	CarouselHome.on('slid.bs.carousel', function ( e ) { 
+
+		//Aumentar variable de control
+		controlCarousel = controlCarousel > 1 ? controlCarousel = 0 : controlCarousel; 
+
+		/* Extraer elemento actual activo */
+		var CurrentItem = j(this).find('.active');
+
+		//Si la ventana es mayor a 640px
+		if( j(window).width() > 640 )
+		{
+			/* Colocar Imagen */
+			if( controlCarousel === 0 )
+			{
+				if( !CurrentItem.hasClass('overlayZoom') )
+				{
+					CurrentItem.addClass("overlayZoom");
+				} 	
+
+			}else{
+
+				if( !CurrentItem.hasClass('overlayZoomAlternate') ) 
+				{
+					CurrentItem.addClass("overlayZoomAlternate");
+				}
+			}
+			
+			/* Aumentar la variable de control alert( controlCarousel ); */
+			controlCarousel++;			
+		}else{ 
+
+			/* Eliminar Clases de Zoom */
+			j(".carousel-item")
+			.removeClass("overlayZoom")
+			.removeClass("overlayZoomAlternate");
+		}
+
+	});
+
+}
+
+/*|----------------------------------------------------------------------|*/
+/*|-----  CAROUSEL ARTICULOS - SECCIONES GENERALES  ------|*/
+/*|----------------------------------------------------------------------|*/
+function carouselArticlesVertical()
+{
+
+	if( j(".js-carousel-vertical").length )
+	{
+		j(".js-carousel-vertical").each(function(){
+			/* Carousel */
+			var current = j(this);
+			/* Velocidad */
+			var Speed   = current.attr('data-speed') !== null && typeof(current.attr('data-speed') ) !== "undefined" ? current.attr('data-speed') : 1500;
+			/* Visibilidad */
+			var ItemsVisible = current.attr('data-items') !== null && typeof(current.attr('data-items') ) !== "undefined" ? current.attr('data-items') : 3;
+			
+			/* Item verticales u horizontales */
+			var OrientacionItem = true;
+			/**/
+			/*current.jCarouselLite({
+				vertical: Boolean(OrientacionItem),
+				auto    : 2500,
+				speed   : parseInt(speed),
+				visible : parseInt(ItemsVisible),	
+  			});*/
+
+  			current.slick({
+				arrows        : false,
+				autoplay      : true,
+				autoplaySpeed : 2500,
+				infinite      : true,
+				pauseOnHover  : false,
+				slidesToScroll: 1,
+				slidesToShow  : parseInt( ItemsVisible ),
+				speed         : parseInt( Speed ),
+				vertical      : Boolean( OrientacionItem ),
+				responsive: [
+			    {
+			    	breakpoint: 640,
+			      	settings: {
+						slidesToShow  : 2,
+			      }
+			    }
+			    ]
+			});
+
+		});
+	}
+}
+
+
 (function($){
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
@@ -41,71 +171,10 @@ var j = jQuery.noConflict();
 			mySlidebars.slidebars.toggle('right');
 		});
 		
-
-		/*|----------------------------------------------------------------------|*/
-		/*|-----  CAROUSEL HOME LIBRERIA  -----|*/
-		/*|----------------------------------------------------------------------|*/
-		var CarouselHome = j("#carousel-home").carousel({ interval: 7000 , pause : "" });
-
-		//Flechas de carousel Home
-		j(".js-btn-carousel-home").on("click", function(e){ e.preventDefault(); });
-		//Flecha Izquierda
-		j("#arrowSliderHome--prev").on("click",function(){
-			CarouselHome.carousel('prev');
-		});
-		//Flecha Derecha
-		j("#arrowSliderHome--next").on("click",function(){
-			CarouselHome.carousel('next');
-		});
-
-		/* VARIABLE DE CONTROL */
-		var controlCarousel = 0;
-
-		//Eventos - al comenzar carousel
-		CarouselHome.on('slide.bs.carousel', function ( e ) {
-
-			var CurrentItem = j(this).find('.active');
- 
-			// texto titulo
-			var title = CurrentItem.find('h3');
-			//title.addClass('contract'); 
-			title.addClass('flipInY').css('opacity',0);
-
-			// texto parrafo
-			var paragraph = CurrentItem.find('p');
-			paragraph.addClass('flipInY').css('opacity',0);
-
-		});
-
-		//Eventos - al finalizar carousel
-		CarouselHome.on('slid.bs.carousel', function ( e ) { 
-
-			//Aumentar variable de control
-			controlCarousel = controlCarousel > 1 ? controlCarousel = 0 : controlCarousel; 
-
-			/* Extraer elemento actual activo */
-			var CurrentItem = j(this).find('.active');
-
-			/* Colocar Imagen */
-			if( controlCarousel === 0 )
-			{
-				if( !CurrentItem.hasClass('overlayZoom') )
-				{
-					CurrentItem.addClass("overlayZoom");
-				} 
-			}else{
-
-				if( !CurrentItem.hasClass('overlayZoomAlternate') ) 
-				{
-					CurrentItem.addClass("overlayZoomAlternate");
-				}
-			}
-
-			/* Aumentar la variable de control alert( controlCarousel ); */
-			controlCarousel++;
-
-
-		});
+		/*
+		* LLAMAR AL CAROUSEL HOME
+		*/
+		carouselHomeSlider();
 
 		/*|----------------------------------------------------------------------|*/
 		/*|-----  EVENTOS FLECHAS CAROUSEL COMUNES  -----|*/
@@ -187,28 +256,11 @@ var j = jQuery.noConflict();
 			j("#"+slider).trigger( 'to.owl.carousel' , [ slideto , 900 ] );
 		});
 
-		/*|----------------------------------------------------------------------|*/
-		/*|-----  CAROUSEL ARTICULOS - SECCIONES GENERALES  ------|*/
-		/*|----------------------------------------------------------------------|*/
-		if( j(".js-carousel-vertical").length )
-		{
-			j(".js-carousel-vertical").each(function(){
-				/* Carousel */
-				var current = j(this);
-				/* Velocidad */
-				var speed   = current.attr('data-speed') !== null && typeof(current.attr('data-speed') ) !== "undefined" ? current.attr('data-speed') : 1500;
-				/* Visibilidad */
-				var ItemsVisible = current.attr('data-items') !== null && typeof(current.attr('data-items') ) !== "undefined" ? current.attr('data-items') : 3;
-				/**/
-				current.jCarouselLite({
-					vertical: true,
-					auto    : 1500,
-					speed   : parseInt(speed),
-					visible : parseInt(ItemsVisible),	
-	  			});
-			});
 
-		}
+		/*|----------------------------------------------------------------------|*/
+		/*|-- Llamar a funcion de Carousel Vertical de Artículos ----------------|*/
+		/*|----------------------------------------------------------------------|*/
+		carouselArticlesVertical();
 
 		/*|----------------------------------------------------------------------|*/
 		/*|-----  ISOTOPE DE IMAGENES  -----|*/
@@ -317,6 +369,24 @@ var j = jQuery.noConflict();
 		if( j("#galeria-imagenes").length ){
 			j("#galeria-imagenes").isotope( 'layout' );
 		}
+
+	});
+
+
+	/**
+	* -------------- Eventos on Resize Page ------------------
+	*/
+	j(window).on('resize',function(){
+
+		/*
+		* LLAMAR AL CAROUSEL HOME
+		*/
+		carouselHomeSlider();
+
+		/*
+		* Llamar a funcion de Carousel Vertical de Artículos
+		*/
+		carouselArticlesVertical();
 
 	});
 

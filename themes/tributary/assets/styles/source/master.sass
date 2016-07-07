@@ -112,6 +112,7 @@ figure
 /***************************************************************************************/
 /**-- SECCIONES - PAGINAS EN COMUN  --------------------------------------------------**/
 /***************************************************************************************/
+
 /*POSICIONES */
 .relative
 	position: relative
@@ -423,6 +424,7 @@ figure
 			margin   : 0 22px 0 0
 			max-width: 187px 
 			overflow : hidden
+			width    : 100%
 			img 
 				+transition( all 3s ease-in )
 		/* Titulo */
@@ -557,7 +559,7 @@ figure
 		.carousel-item
 			background-repeat    : no-repeat
 			background-size      : 100% 100%
-			height               : 488px
+			height               : 485px
 			+transition( 1s ease-in-out left !important )
 
 			//Información Caption Ti´tulo y parrafp
@@ -569,6 +571,7 @@ figure
 				right      : inherit
 				text-align : left
 				top        : 30%
+				word-break : break-all
 				h3 , p 
 					line-height: 1em 
 				h3 
@@ -842,3 +845,84 @@ figure
 /************************************************************************************/
 /*-- MEDIA QUERIES -----------------------------------------------------------------*/
 /************************************************************************************/
+
+
+//MENOR A 640PX 
+@media ( max-width: 640px )
+
+	//$$$$ Slider de Post y preview de post $$$$
+	.pagePreview_post 
+		.articles-item 
+			figure
+				margin   : 0 auto 15px 
+				max-width: initial
+	
+	/* Contenedor SB SLIDER PARA MOBILE */
+	#sb-site
+		padding: 100px 0 0 0
+
+	// $$PAGINA COMUN BANNER DE PAGINA 
+	.pageCommon__banner 
+		figure
+			background-position: top center
+
+	// $$$ SIDEBAR COMUN
+	.sidebarCommon
+		background: white
+		margin    : 30px 5px
+		padding   : 10px
+
+
+	// $$$ HEADER 
+	.mainHeader
+		background: white 
+		left      : 0
+		position  : fixed
+		right     : 0
+		z-index   : 99999
+		//Logo
+		.logo 
+			margin   : 0 25px 
+			max-width: 150px
+		//Íconos
+		.icon-header 
+			font-size: 40px
+	
+	// $$$ MAIN NAVIGATION 
+	.mainNavigation 
+		margin: 30px auto
+		ul 
+			li
+				display: block
+				width  : 100%
+				a 
+					font-size: 20px
+
+		//Submenu		
+		ul.sub-menu
+			position: relative
+
+	// $$$$ PAGINA INICIO
+
+	/* Carousel Home */
+	.pageInicio__slider 
+		.carousel-inner 
+			.carousel-item
+				background-position: top right 
+				background-size    : cover 
+				height             : 400px
+				.carousel-caption
+					left     : 20%
+					max-width: 200px
+
+	// $$$ PÁGINA BLOG
+	.arrowCarouselBlog-prev
+		right: 15%
+
+	// $$$$ FOOTER $$ 
+
+	/* Footer Item */
+	.mainFooter__item
+		border-right: none
+		height      : auto
+		margin      : 0 auto 30px

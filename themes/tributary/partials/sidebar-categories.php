@@ -1,23 +1,22 @@
 <?php /* Sidebar Categorias  y artículos relacionados para el Blog */ ?>
 
-<aside class="pageBlog__sidebar">
+<?php if( isset($categorias) ) : 
 
-	<!-- Sección Categorías -->
-	<section class="pageBlog__sidebar__categories">
-		<!-- Título --> <h2 class="text-uppercase"><strong><?php _e('categorías',LANG); ?></strong></h2>
-		<!-- Categorias -->
-		<?php 
-			$categories = get_terms( 'category', 'orderby=count&hide_empty=0' ); 
-			#var_dump($categories);
-			foreach( $categories as $cat ) : 
-		?> <!-- Item categoría -->
-		<div class="item-category">
-			<?php 
-				$class =  isset($category) && $category->term_id == $cat->term_id ? 'active' : ''; 
-			?>
-			<a class="<?= $class ?>" href="<?= get_category_link( $cat->term_id ); ?>"><?= $cat->name . " " . "(".$cat->count.")" ; ?></a>
-		</div> <!-- /.item-category -->
-		<?php endforeach; ?>
-	</section> <!-- /.pageBlog__sidebar__categories -->
+$current_term = get_queried_object(); //Objeto actual si es taxonomía
 
-</aside> <!-- /.pageBlog__sidebar -->
+?>
+
+<aside class="sidebarCommon">
+	<!-- Titulo de Sidebar --> <h2 class="titleSidebar"> <?php _e( "Categorías" , LANG ); ?></h2>
+	
+	<!-- Sección de Categorías -->
+	<?php foreach( $categorias as $categoria ) : ?>
+		<a href="<?= get_term_link( $categoria ); ?>" class="link-to-item <?= $current_term->term_id == $categoria->term_id ? 'active' : '' ?>"><?php _e( $categoria->name , LANG  ); ?>
+		<!-- Icon  -->
+		<i class="fa fa-chevron-right" aria-hidden="true"></i>
+		</a>
+	<?php endforeach; ?>
+
+</aside> <!-- /.sidebarServices -->
+
+<?php endif; ?>

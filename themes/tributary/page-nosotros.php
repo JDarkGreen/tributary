@@ -60,8 +60,8 @@
 						<?php endif; endforeach; ?>
 					</div> <!-- /.section__single_gallery -->
 
-					<!-- Flechas de Carousel -->
-					<div class="text-xs-center relative">
+					<!-- Flechas de Carousel Ocultar en mobile -->
+					<div class="text-xs-center relative hidden-xs-down">
 						<!-- Flecha Izquierda -->
 						<a href="#" id="" class="arrow__common-slider js-carousel-prev arrowCarouselNosotros-prev" data-slider="carousel-nosotros">
 							<i class="fa fa-chevron-left" aria-hidden="true"></i>
@@ -103,44 +103,50 @@
 			<div class="row text-justify">
 				
 				<!-- MISIÓN -->
-				<div class="col-xs-6">
+				<div class="col-xs-12 col-md-6">
 					<?php if( isset($theme_mod['text_mision']) && !empty($theme_mod['text_mision']) ) : ?>
 						<div class="row">
 							<!-- Imagen -->
-							<div class="col-xs-4">
+							<div class="col-xs-12 col-md-4">
 								<figure class="">
 									<?php  
 										$imagen_mision = isset($theme_mod['image_mision']) && !empty($theme_mod['image_mision']) ? $theme_mod['image_mision'] : IMAGES . '/nosotros/imagen_mision.jpg';
 									?>
 									<img src="<?= $imagen_mision; ?>" alt="tributary-mision-agencia-pecuarias" class="img-fluid" />
 								</figure> <!-- /. -->
+
+								<!-- Separación en mobile --> <p class="hidden-sm-up"></p>
 							</div> <!-- /.col-xs-4 -->
 							<!-- Texto -->
-							<div class="col-xs-8">
+							<div class="col-xs-12 col-md-8">
 								<!-- Titulo --> <h3 class="pageSectionCommon__title text-uppercase"> <?php _e( "misión", LANG ); ?></h3>
 								<!-- Texto -->
 								<?= apply_filters('the_content' , $theme_mod['text_mision'] ); ?>
 							</div> <!-- /.col-xs-8 -->
+
+							<!-- Separación en mobile --> <p class="hidden-sm-up"></p>
 							
 						</div> <!-- /.row -->
 					<?php endif; ?>
 				</div> <!-- /.col-xs-6 -->		
 
 				<!-- VISIÓN -->
-				<div class="col-xs-6">
+				<div class="col-xs-12 col-md-6">
 					<?php if( isset($theme_mod['text_vision']) && !empty($theme_mod['text_vision']) ) : ?>
 						<div class="row">
 							<!-- Imagen -->
-							<div class="col-xs-4">
+							<div class="col-xs-12 col-md-4">
 								<figure class="">
 									<?php  
 										$imagen_vision = isset($theme_mod['image_vision']) && !empty($theme_mod['image_vision']) ? $theme_mod['image_vision'] : IMAGES . '/nosotros/imagen_vision.jpg';
 									?>
 									<img src="<?= $imagen_vision; ?>" alt="tributary-vision-agencia-pecuarias" class="img-fluid" />		
 								</figure> <!-- /. -->
+								
+								<!-- Separación en mobile --> <p class="hidden-sm-up"></p>
 							</div> <!-- /.col-xs-4 -->
 							<!-- Texto -->
-							<div class="col-xs-8">
+							<div class="col-xs-12 col-md-8">
 								<!-- Titulo --> <h3 class="pageSectionCommon__title text-uppercase"> <?php _e( "visión", LANG ); ?></h3>
 								<!-- Texto -->
 								<?= apply_filters('the_content' , $theme_mod['text_vision'] ); ?>

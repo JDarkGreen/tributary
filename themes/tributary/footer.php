@@ -70,7 +70,7 @@
 					</div> <!-- /.col-xs-12 col-md-3 -->
 
 					<!-- Item Footer -->
-					<div class="col-xs-12 col-md-3">
+					<div class="col-xs-12 col-md-4">
 						<div class="mainFooter__item text-xs-center">
 							<!-- Titulo -->
 							<h2 class="mainFooter__subtitle text-uppercase"><?php _e('encuéntranos' , LANG ); ?></h2>
@@ -117,7 +117,7 @@
 		<!-- Seccion de Desarrollo -->
 		<section class="mainFooter__develop">
 			<div class="container">
-				<div class="pull-xs-right"> &copy; <?= date("Y"); ?> TributaryPeru. Derechos reservados Design by <a target="_blank" href="#">INGENIOART</a></div>
+				<div class="pull-xs-right"> &copy; <?= date("Y"); ?> TributaryPeru. Derechos reservados Design by <a target="_blank" href="http://www.ingenioart.com/">INGENIOART</a></div>
 			</div> <!-- /.container -->
 		</section> <!-- /.mainFooter__develop -->
 

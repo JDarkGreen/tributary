@@ -18,15 +18,24 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import url("assets/styles/build/font-awesome/css/font-awesome.min.css"); 
 /*bootstrap*/
 @import url("assets/styles/build/bootstrap.min.css"); 
+
 /* owl carousel */
 @import url("assets/styles/build/owl.carousel.css"); 
+
 /* fancybox */
 @import url("assets/styles/build/fancybox/jquery.fancybox.css"); 
+
 /* parsley */
 @import url("assets/styles/build/parsley.css"); 
+
 /* rev slider */
 @import url("assets/styles/build/revslider.css"); 
+
 /* slidebars */
 @import url("assets/styles/build/slidebars.min.css"); 
+
+/* slick carousel */
+@import url("assets/styles/build/slick/slick.css"); 
+
 /* archivo master */
 @import url("assets/styles/build/master.css");

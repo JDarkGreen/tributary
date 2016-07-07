@@ -22,10 +22,10 @@
 		<div class="row">
 
 			<!-- SECCIÓN DE DATOS  -->
-			<div class="col-xs-6">
+			<div class="col-xs-12 col-md-6">
 	
 				<section class="pageContact__data">
-					<!-- Titulo --> <h2 class="pageSectionCommon__title text-uppercase"><?php _e( "Datos generales" , LANG ); ?></h2> 
+					<!-- Titulo --> <h2 class="pageSectionCommon__title text-uppercase text-xs-center text-md-left"><?php _e( "Datos generales" , LANG ); ?></h2> 
 					<!-- Separación --> <br/>
 
 					<!-- Lista de Datos -->
@@ -73,10 +73,12 @@
 
 				</section> <!-- /. -->
 
-			</div> <!-- /.col-xs-6 -->
+				<!-- Separación en mobile --> <br class="hidden-sm-up" />
+
+			</div> <!-- /.col-xs-12 col-md-6 -->
 
 			<!-- SECCIÓN DE REDES SOCIALES  -->
-			<div class="col-xs-6">
+			<div class="col-xs-12 col-md-6 text-xs-center text-md-left">
 
 				<section class="pageContact__social">
 					<!-- Titulo --> <h2 class="pageSectionCommon__title text-uppercase"><?php _e( "redes sociales" , LANG ); ?></h2>
@@ -102,7 +104,7 @@
 
 				</section> <!-- /. -->
 				
-			</div> <!-- /.col-xs-6 -->
+			</div> <!-- /.col-xs-12 col-md-6 -->
 
 		</div> <!-- /.row -->
 
@@ -113,7 +115,7 @@
 		<div class="row">
 
 			<!-- SECCIÓN DE FORMULARIO DE CONTACTO  -->
-			<div class="col-xs-6">
+			<div class="col-xs-12 col-md-6 text-xs-center text-md-left">
 
 				<section class="pageContact__formulary">
 					<!-- Titulo --> <h2 class="pageSectionCommon__title text-uppercase"><?php _e( "Nuestro formulario" , LANG ); ?></h2>
@@ -161,12 +163,16 @@
 
 					</form> <!-- /.pageContacto__form -->
 
-				</section> <!-- /. -->				
+				</section> <!-- /. -->	
 
-			</div> <!-- /.col-xs-6 -->
+				<!-- Separación en mobile --> 
+				<br class="hidden-sm-up" />			
+				<br class="hidden-sm-up" />			
+
+			</div> <!-- /.col-xs-12 col-md-6 text-xs-center text-md-left -->
 
 			<!-- SECCION DE MAPA -->
-			<div class="col-xs-6">
+			<div class="col-xs-12 col-md-6">
 
 				<section class="pageContact__map">
 					
@@ -182,7 +188,7 @@
 
 				</section> <!-- /.pageContact__map -->	
 
-			</div> <!-- /.col-xs-6 -->
+			</div> <!-- /.col-xs-12 col-md-6 -->
 
 		</div> <!-- /.row -->
 

@@ -19,7 +19,7 @@
 			<div class="row">
 				
 				<!-- Contenido -->
-				<div class="col-xs-8">
+				<div class="col-xs-12 col-md-8">
 					<section class="">
 						<?php 
 
@@ -184,23 +184,12 @@
 
 
 					</section> <!-- /.section -->
-				</div> <!-- /.col-xs-8 -->
+				</div> <!-- /.col-xs-12 col-md-8 -->
 				
 				<!-- Aside de Categoria -->
-				<div class="col-xs-4">
-					<!-- Sidebar de Categorias -->
-					<aside class="sidebarCommon">
-						<!-- Titulo de Sidebar --> <h2 class="titleSidebar"> <?php _e( "Categorías" , LANG ); ?></h2>
-						
-						<!-- Sección de Categorías -->
-						<?php foreach( $categorias as $categoria ) : ?>
-							<a href="<?= get_term_link( $categoria ); ?>" class="link-to-item <?= $first_cat->term_id == $categoria->term_id ? 'active' : '' ?>"><?php _e( $categoria->name , LANG  ); ?>
-							<!-- Icon  -->
-							<i class="fa fa-chevron-right" aria-hidden="true"></i>
-							</a>
-						<?php endforeach; ?>
-
-					</aside> <!-- /.sidebarCommon -->
+				<div class="col-xs-4 hidden-xs-down">
+					<!-- Incluir plantilla -->
+					<?php include( locate_template("partials/sidebar-categories.php") ); ?>
 				</div> <!-- /.col-xs-4 -->
 
 			</div> <!-- /.row -->

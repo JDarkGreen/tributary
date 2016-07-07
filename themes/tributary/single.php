@@ -63,19 +63,8 @@
 			<!-- Sidebar  Ocultar en mobile -->
 			<aside class="col-md-4 hidden-xs-down">
 				
-				<!-- Sidebar de Categorias -->
-				<section class="sidebarCommon">
-					<!-- Titulo de Sidebar --> <h2 class="titleSidebar"> <?php _e( "Categorías" , LANG ); ?></h2>
-					
-					<!-- Sección de Categorías -->
-					<?php foreach( $categorias as $categoria ) : ?>
-						<a href="<?= get_term_link( $categoria ); ?>" class="link-to-item <?= $first_cat->term_id == $categoria->term_id ? 'active' : '' ?>"><?php _e( $categoria->name , LANG  ); ?>
-						<!-- Icon  -->
-						<i class="fa fa-chevron-right" aria-hidden="true"></i>
-						</a>
-					<?php endforeach; ?>
-
-				</section> <!-- /.sidebarCommon -->
+				<!-- Incluir plantilla -->
+				<?php include( locate_template("partials/sidebar-categories.php") ); ?>
 				
 				<!-- Separacion  -->		
 				<p class="clearfix"></p>

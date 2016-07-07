@@ -78,8 +78,9 @@
 <section class="pageInicio__miscelaneo">
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-8">
-				<!-- SECCION DE BLOG  -->
+			
+			<!-- SECCION DE BLOG  -->
+			<div class="col-xs-12 col-md-8">
 				<section>
 					<!-- Titulo  --> <h2 class="titleCommon__page text-uppercase"> <span class="relative"> <?php _e( "blog" , LANG ); ?> </span> </h2>
 
@@ -100,39 +101,38 @@
 					*/ 
 					?>
 					<div id="carousel-articles" class="pagePreview_post js-carousel-vertical" data-items="3">
-						<ul>
-							<?php foreach( $ultimos_posts as $u_post ) : ?>
-							<li>
-								<article class="articles-item">
-									<!-- Imagen -->
-									<figure class="pull-md-left">
-									<?php 
-										$image = get_the_post_thumbnail( $u_post->ID , 'full' , array('class'=>'img-fluid center-block imgNotBlur') ); 
-										if( !empty($image) ) : echo $image;
-										else:
-									?>
-										<img src="http://lorempixel.com/980/549/sports" alt="lorempixel" class="img-fluid center-block imgNotBlur" />
-									<?php endif; ?>
-									</figure><!-- /figure -->
-									<!-- Texto -->
-									<h3 class="articles-item-title text-uppercase">
-									<?php _e( $u_post->post_title , LANG ); ?></h3>
-									<!-- Extracto 30 palabras -->
-									<p class="articles-item-excerpt text-justify">
-									<?php _e( wp_trim_words( $u_post->post_content , 30 , ' ' ) , LANG ); ?>
-										<!-- leer más -->
-										<a class="read-more" href="<?= get_permalink( $u_post->ID ); ?>">Leer más </a>
-									</p>
-									<!-- Limpiar float --> <div class="clearfix"></div>
-								</article><!-- /.sectionPage__articles__item -->
-							</li>
-							<?php endforeach; ?>
-						</ul>
+						<?php foreach( $ultimos_posts as $u_post ) : ?>
+						<div class="carousel-item">
+							<article class="articles-item">
+								<!-- Imagen -->
+								<figure class="pull-md-left">
+								<?php 
+									$image = get_the_post_thumbnail( $u_post->ID , 'full' , array('class'=>'img-fluid center-block imgNotBlur') ); 
+									if( !empty($image) ) : echo $image;
+									else:
+								?>
+									<img src="http://lorempixel.com/980/549/sports" alt="lorempixel" class="img-fluid center-block imgNotBlur" />
+								<?php endif; ?>
+								</figure><!-- /figure -->
+								<!-- Texto -->
+								<h3 class="articles-item-title text-uppercase">
+								<?php _e( $u_post->post_title , LANG ); ?></h3>
+								<!-- Extracto 30 palabras -->
+								<p class="articles-item-excerpt text-justify">
+								<?php _e( wp_trim_words( $u_post->post_content , 30 , ' ' ) , LANG ); ?>
+									<!-- leer más -->
+									<a class="read-more" href="<?= get_permalink( $u_post->ID ); ?>">Leer más </a>
+								</p>
+								<!-- Limpiar float --> <div class="clearfix"></div>
+							</article><!-- /.sectionPage__articles__item -->
+						</div>
+						<?php endforeach; ?>
 					</div><!-- /#carousel-articles -->
 				</section> <!-- /.section -->
 			</div> <!-- /.col-xs-8 -->
-			<div class="col-xs-4">
-				<!-- SECCION DE FACEBOOK -->
+
+			<!-- SECCION DE FACEBOOK -->
+			<div class="col-xs-12 col-md-4">
 				<section>
 					<!-- Titulo  --> <h2 class="titleCommon__page text-uppercase"> <span class="relative"> <?php _e( "facebook" , LANG ); ?> </span> </h2>
 

@@ -33,7 +33,7 @@
 					/* Comprobar que existan los sectores y entonces hacer el recorrido */
 					if( !empty($sectores) ) : foreach( $sectores as $sector ) : 
 				?> <!-- Articulo  -->
-					<div class="col-xs-4">
+					<div class="col-xs-12 col-md-4">
 						<article class="itemCliente">
 							<!-- Imagen -->
 							<figure>
@@ -63,7 +63,9 @@
 							</div> <!-- /. -->
 
 						</article> <!-- /.itemCliente -->
-					</div> <!-- /.col-xs-4 -->
+
+						<!-- Separación en mobile --> <br class="hidden-sm-up" />
+					</div> <!-- /.col-xs-12 col-md-4 -->
 				<?php endforeach; endif;  ?>
 
 			</div> <!-- /.row -->

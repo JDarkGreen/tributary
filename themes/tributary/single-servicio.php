@@ -21,7 +21,7 @@
 		<section class="pageServicios__content">
 			<div class="row">
 
-				<div class="col-xs-4">
+				<div class="col-xs-12 col-md-4">
 					<!-- Sidebar de Servicios -->
 					<aside class="sidebarCommon">
 						<!-- Titulo de Sidebar --> <h2 class="titleSidebar"> <?php _e( "Servicios" , LANG ); ?></h2>
@@ -43,9 +43,13 @@
 						</a>
 						<?php endforeach; endif; ?>						
 					</aside> <!-- /.sidebarServices -->
+
+					<!-- Separación en mobile --> 
+					<br class="hidden-sm-up" />
+
 				</div> <!-- /.col-xs-4 -->
 
-				<div class="col-xs-8">
+				<div class="col-xs-12 col-md-8">
 					<section>
 
 						<!-- Titulo  --> <h2 class="pageSectionCommon__title text-uppercase text-xs-left"> <span class="relative"> <?php _e( $post->post_title . " :" , LANG ); ?> </span> </h2>
