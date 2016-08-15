@@ -28,7 +28,7 @@
 <body <?php body_class(); ?> >
 	
 	<?php 
-		$options = get_option('theme_custom_settings'); 
+		$theme_mod = get_theme_mod('theme_custom_settings');
 		global $post;
 
 		//Comprobar si esta desplegada la barra de Navegación
@@ -49,36 +49,36 @@
 				<!-- Lista de Redes Sociales -->
 				<ul class="social-links social-links--gray pull-xs-left">
 					<!-- Facebook -->
-					<?php if( isset($options['red_social_fb']) && !empty($options['red_social_fb']) ) : ?>
-						<li><a target="_blank" href="<?= $options['red_social_fb']; ?>">
+					<?php if( isset($theme_mod['red_social_fb']) && !empty($theme_mod['red_social_fb']) ) : ?>
+						<li><a target="_blank" href="<?= $theme_mod['red_social_fb']; ?>">
 							<i class="fa fa-facebook" aria-hidden="true"></i>
 						</a></li>
 					<?php endif; ?>
 					<!-- Twitter -->
-					<?php if( isset($options['red_social_twitter']) && !empty($options['red_social_twitter']) ): ?>
-						<li><a target="_blank" href="<?= $options['red_social_twitter']; ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a> </li>
+					<?php if( isset($theme_mod['red_social_twitter']) && !empty($theme_mod['red_social_twitter']) ): ?>
+						<li><a target="_blank" href="<?= $theme_mod['red_social_twitter']; ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a> </li>
 					<?php endif; ?>
 					<!-- Youtube -->
-					<?php if( isset($options['red_social_ytube']) && !empty($options['red_social_ytube']) ) : ?>
-						<li><a target="_blank" href="<?= $options['red_social_ytube']; ?>"><i class="fa fa-youtube" aria-hidden="true"></i></a> </li>
+					<?php if( isset($theme_mod['red_social_ytube']) && !empty($theme_mod['red_social_ytube']) ) : ?>
+						<li><a target="_blank" href="<?= $theme_mod['red_social_ytube']; ?>"><i class="fa fa-youtube" aria-hidden="true"></i></a> </li>
 					<?php endif; ?>
 				</ul> <!-- /.social-links -->
 
 				<!-- Seccion  Solo de Informacion  -->
 				<div class="mainHeader__info__content container-flex align-content pull-xs-right">
 					<!-- Email -->
-					<?php if( isset($options['contact_email']) && !empty($options['contact_email']) ) :
+					<?php if( isset($theme_mod['contact_email']) && !empty($theme_mod['contact_email']) ) :
 					?>
 					<p> <!-- Icono --> 
 						<i class="fa fa-envelope" aria-hidden="true"></i>
-						<?= $options['contact_email']; ?>
+						<?= $theme_mod['contact_email']; ?>
 					</p>
 					<?php endif; ?>
 
 					<!-- Teléfonos -->
 					<?php 
-						if( isset($options['contact_tel']) && !empty($options['contact_tel']) ) :
-						$numeros = $options['contact_tel']; 
+						if( isset($theme_mod['contact_tel']) && !empty($theme_mod['contact_tel']) ) :
+						$numeros = $theme_mod['contact_tel']; 
 						$numeros = explode(",", $numeros ); /* Obtener el primero numero */
 					?>
 						<p>

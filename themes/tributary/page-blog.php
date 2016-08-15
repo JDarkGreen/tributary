@@ -108,7 +108,7 @@
 												<h3 class="articles-item-title text-uppercase">
 												<?php _e( $articulo->post_title , LANG ); ?></h3>
 												<!-- Extracto 30 palabras -->
-												<p class="articles-item-excerpt text-justify">
+												<p class="articles-item-excerpt">
 												<?php _e( wp_trim_words( $articulo->post_content , 30 , ' ' ) , LANG ); ?>
 													<!-- leer más -->
 													<a class="read-more" href="<?= get_permalink( $articulo->ID ); ?>">Leer más </a>
@@ -169,7 +169,7 @@
 										<h3 class="articles-item-title text-uppercase">
 										<?php _e( $articulo->post_title , LANG ); ?></h3>
 										<!-- Extracto 30 palabras -->
-										<p class="articles-item-excerpt text-justify">
+										<p class="articles-item-excerpt">
 										<?php _e( wp_trim_words( $articulo->post_content , 30 , ' ' ) , LANG ); ?>
 											<!-- leer más -->
 											<a class="read-more" href="<?= get_permalink( $articulo->ID ); ?>">Leer más </a>

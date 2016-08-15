@@ -47,7 +47,7 @@
 							<?php endif; ?>
 						</figure>
 						<!-- titulo --> <h3 class="text-uppercase"><?php _e( $service->post_title , LANG ); ?></h3>
-						<!-- Extracto --> <div class="item-room__excerpt text-justify"> <?= apply_filters( 'the_content' , wp_trim_words( $service->post_content , 20 , '' ) ); ?></div>
+						<!-- Extracto --> <div class="item-room__excerpt"> <?= apply_filters( 'the_content' , wp_trim_words( $service->post_content , 20 , '' ) ); ?></div>
 						<!-- Botón ver más --> <a href="<?= get_permalink( $service->ID ); ?>" class="btnCommon__show-more btnCommon__show-more--turquesa text-uppercase"><?php _e('ver más' , LANG ); ?></a>
 					</article> <!-- /.item-service -->
 				<?php endforeach; ?>
@@ -77,6 +77,7 @@
 
 <section class="pageInicio__miscelaneo">
 	<div class="container">
+
 		<div class="row">
 			
 			<!-- SECCION DE BLOG  -->
@@ -118,7 +119,7 @@
 								<h3 class="articles-item-title text-uppercase">
 								<?php _e( $u_post->post_title , LANG ); ?></h3>
 								<!-- Extracto 30 palabras -->
-								<p class="articles-item-excerpt text-justify">
+								<p class="articles-item-excerpt">
 								<?php _e( wp_trim_words( $u_post->post_content , 30 , ' ' ) , LANG ); ?>
 									<!-- leer más -->
 									<a class="read-more" href="<?= get_permalink( $u_post->ID ); ?>">Leer más </a>
@@ -162,7 +163,48 @@
 
 				</section>
 			</div><!-- /.col-xs-4 -->
+
 		</div> <!-- /.row -->
+
+		<!-- Separación --> <br/>
+
+		<!-- SECCIÓN ENLACES DE INTERÉS -->
+		<section class="pageCommon__featured-links">
+
+			<!-- Titulo  --> 
+			<h2 class="titleCommon__page text-uppercase"> <span class="relative"> <?php _e( "enlaces de interés" , LANG ); ?> </span> </h2>
+
+			<!-- Carousel de Enlace De Interés -->
+			<div id=".carousel-featured-links" class="section__single_gallery js-carousel-gallery" data-items="5" data-items-responsive="1" data-margins="70" data-dots="true" data-autoplay="true">
+
+				<?php  
+					/**
+					* Extraer todos los enlaces de interés
+					**/
+					$args = array(
+						'order'          => 'ASC',
+						'orderby'        => 'menu_order',
+						'post_status'    => 'publish',
+						'post_type'      => 'featured-links',
+						'posts_per_page' => -1,
+					);
+					$featured_links = get_posts( $args );
+
+					foreach( $featured_links as $featured_link ):
+				?>
+				<article class="itemFeaturedLink">
+					<a href="<?= $featured_link->post_content; ?>" target="_blank">
+						<?= get_the_post_thumbnail( $featured_link->ID , 'full' , array('class'=>'img-fluid center-block') ); ?>
+					</a>
+				</article>
+				<?php endforeach; ?>
+
+			</div> <!-- /.carousel-featured-links -->
+
+			
+			
+		</section> <!--/.pageCommon__featured-links-->
+
 	</div> <!-- /.container -->
 </section> <!-- /.pageInicio__miscelaneo -->
 

@@ -100,7 +100,7 @@
 	<section class="pageNosotros__aptitudes">
 		<div class="container">
 
-			<div class="row text-justify">
+			<div class="row">
 				
 				<!-- MISIÓN -->
 				<div class="col-xs-12 col-md-6">

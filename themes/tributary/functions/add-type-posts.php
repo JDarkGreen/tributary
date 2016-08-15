@@ -149,13 +149,37 @@ function create_post_type(){
 		'menu_icon'   => 'dashicons-groups',
 	);
 
+
+	/*|>>>>>>>>>>>>>>>>>>>> ENLACES DE INTERÉS  <<<<<<<<<<<<<<<<<<<<|*/
+	
+	$labels_link_featured = array(
+		'name'               => __('Enlaces de Interés'),
+		'singular_name'      => __('Enlace'),
+		'add_new'            => __('Nuevo Enlace'),
+		'add_new_item'       => __('Agregar nuevo Enlace'),
+		'edit_item'          => __('Editar Enlace'),
+		'view_item'          => __('Ver Enlace'),
+		'search_items'       => __('Buscar Enlace'),
+		'not_found'          => __('Enlace no encontrado'),
+		'not_found_in_trash' => __('Enlace no encontrado en la papelera'),
+	);
+
+	$args_link_featured = array(
+		'labels'      => $labels_link_featured,
+		'has_archive' => true,
+		'public'      => true,
+		'hierachical' => false,
+		'supports'    => array('title','editor','excerpt','custom-fields','thumbnail','page-attributes'),
+		'taxonomies'  => array('post-tag','category'),
+		'menu_icon'   => 'dashicons-editor-unlink',
+	);
+
 	/*|>>>>>>>>>>>>>>>>>>>> REGISTRAR  <<<<<<<<<<<<<<<<<<<<|*/
 	register_post_type( 'slider-home' , $args  );
 	register_post_type( 'servicio' , $args2 );
 	register_post_type( 'cliente' , $args3 );
 	register_post_type( 'miembro' , $args6 );
-	//register_post_type( 'galery-images' , $args4 );
-	//register_post_type( 'galery-videos' , $args5 );
+	register_post_type( 'featured-links' , $args_link_featured );
 
 	flush_rewrite_rules();
 }

@@ -37,8 +37,9 @@ $theme_gplus         : #DB4B39
 /***************************************************************************************/
 
 body,html
-	font-size: 16px
-	width    : 100% 
+	font-size  : 16px
+	width      : 100% 
+	font-family: "Arial" , sans-serif
 
 
 figure 
@@ -292,10 +293,6 @@ figure
 		a 
 			color: $theme_gray 
 
-//++Variacion de redes sociales a rojo
-.social-links--red
-	li 
-		a 
 
 //BOTÓN HACIA ARRIBA 
 #arrow-up-page
@@ -309,8 +306,6 @@ figure
 	right     : 3%
 	top       : 86%
 	z-index   : 999999
-	/* Hover */
-	&:hover 
 
 //GALERÍAS DE CAROUSEL
 .section__single_gallery
@@ -520,7 +515,7 @@ figure
 			overflow  : hidden
 			padding   : 0 
 			position  : absolute
-			text-align: center
+			text-align: left
 			top       : 105%
 			z-index   : 999
 			li 
@@ -562,7 +557,7 @@ figure
 			height               : 485px
 			+transition( 1s ease-in-out left !important )
 
-			//Información Caption Ti´tulo y parrafp
+			//Información Caption Título y párrafo
 			.carousel-caption
 				font-family: "Roboto",sans-serif
 				left       : 10%
@@ -571,7 +566,7 @@ figure
 				right      : inherit
 				text-align : left
 				top        : 30%
-				word-break : break-all
+				word-break : break-word
 				h3 , p 
 					line-height: 1em 
 				h3 
@@ -632,6 +627,11 @@ figure
 .pageInicio__miscelaneo
 	padding: 50px 0 
 
+/** [ SECCIÓN ENLACES DE INTERES ] **/
+.itemFeaturedLink
+	align-items: center
+	display    : flex
+	height     : 70px
 
 /***************************************************************************************/
 /**--  PAGINA NOSOTROS  --------------------------------------------------------------**/
@@ -683,6 +683,16 @@ figure
 .articleItemStaff
 	font-family: "Roboto Condensed" , sans-serif
 	margin     : 0 15px 60px 
+	/* Imágen */
+	figure 
+		+border-radius( 50% )
+		-webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC)
+		border            : 4px solid #A70032
+		height            : 150px 
+		margin            : 0 auto 
+		overflow          : hidden
+		width             : 150px 
+
 	/* Para los párrafos */
 	p 
 		font-size  : 16px
@@ -781,9 +791,6 @@ figure
 	textarea
 		height    : 135px 
 		max-height: 135px 
-
-//SECCIÓN DE MAPA
-.pageContact__map
 
 #canvas-map
 	height: 400px 

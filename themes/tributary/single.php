@@ -43,13 +43,13 @@
 					<p class="clearfix"></p><p class="clearfix"></p>
 
 					<!-- Contenido -->
-					<div class="text-justify">
+					<div class="">
 						<?php 
 							if( !empty( $post->post_content ) ) : 
 							echo _e( apply_filters('the_content' , $post->post_content ) , LANG );
 							endif;
 						?>
-					</div> <!-- /.text-justify -->
+					</div> <!-- /. -->
 
 					<!-- Enviar Permalink -->
 					<?php $the_link_share = get_permalink( $post->ID ); ?>

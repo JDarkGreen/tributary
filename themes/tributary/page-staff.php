@@ -68,7 +68,7 @@
 							<div class="col-xs-12 col-md-8 text-xs-center text-md-left">
 								<!-- Titulo o Nombre --> <h2 class="pageSectionCommon__title text-uppercase"><?php _e( $miembro->post_title , LANG ); ?></h2>
 									<!-- Texto -->
-								<div class="text-justify">
+								<div class="">
 									<?= apply_filters('the_content' , $miembro->post_content ); ?>
 								</div> <!-- /.text-xs-justify -->
 							</div> <!-- /.col-xs-8 -->
