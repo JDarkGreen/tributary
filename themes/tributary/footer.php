@@ -103,7 +103,7 @@
 								<!-- Ubicación -->
 								<?php if( isset($theme_mod['contact_address']) && !empty($theme_mod['contact_address']) ) : ?>
 									<li> <!-- Icono --> <i class="fa fa-map-marker" aria-hidden="true"></i>
-									<p class=""><?= $theme_mod['contact_address']; ?> </p>
+									<?= apply_filters( "the_content" , $theme_mod['contact_address'] ); ?>
 									</li>
 								<?php endif; ?>
 							</ul> <!-- /.mainFooter__list-data -->
