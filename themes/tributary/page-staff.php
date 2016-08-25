@@ -8,8 +8,15 @@
 
 <!-- Incluir Banner de Pagina -->
 <?php
-	global $post; //Objeto actual - Pagina 
-	$banner = $post;  // Seteamos la variable banner de acuerdo al post
+	//Objeto actual - Pagina 
+	global $post; 
+	// Seteamos la variable banner de acuerdo al post
+	$banner = $post;  
+
+	//Alguna variacion de titulo en el color 
+	$banner_title_color = "title__color--white";
+	
+	//Incluir Plantilla
 	include( locate_template("partials/banner-common-pages.php") ); 
 ?>
 

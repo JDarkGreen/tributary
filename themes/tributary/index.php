@@ -171,8 +171,10 @@
 		<!-- SECCIÓN ENLACES DE INTERÉS -->
 		<section class="pageCommon__featured-links">
 
+			<br><br>
+
 			<!-- Titulo  --> 
-			<h2 class="titleCommon__page text-uppercase"> <span class="relative"> <?php _e( "enlaces de interés" , LANG ); ?> </span> </h2>
+			<!--h2 class="titleCommon__page text-uppercase"> <span class="relative"> <?php _e( "enlaces de interés" , LANG ); ?> </span> </h2-->
 
 			<!-- Carousel de Enlace De Interés -->
 			<div id=".carousel-featured-links" class="section__single_gallery js-carousel-gallery" data-items="5" data-items-responsive="1" data-margins="70" data-dots="true" data-autoplay="true">

@@ -15,8 +15,13 @@
 			<!--img src="<?= $img_banner ?>" alt="banner-nosotros-empresa-tributary" class="img-fluid hidden-xs-down" /-->
 		</figure>
 
+		<?php  
+			#Variable de color para título 
+			$title_color_class = isset($banner_title_color) && !empty($banner_title_color) ? $banner_title_color : "";
+		?>
+
 		<!-- Título de la pagina posicion absoluta -->
-		<h2 class="pageCommon__banner__title text-uppercase container-flex align-content"> 
+		<h2 class="pageCommon__banner__title <?= $title_color_class; ?> text-uppercase container-flex align-content"> 
 			<?php
 				if( isset($banner_title) && !empty($banner_title) ){
 				 _e(  $banner_title , LANG ); 
