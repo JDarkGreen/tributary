@@ -48,20 +48,40 @@
 
 				<!-- Lista de Redes Sociales -->
 				<ul class="social-links social-links--gray pull-xs-left">
+
 					<!-- Facebook -->
 					<?php if( isset($theme_mod['red_social_fb']) && !empty($theme_mod['red_social_fb']) ) : ?>
 						<li><a target="_blank" href="<?= $theme_mod['red_social_fb']; ?>">
-							<i class="fa fa-facebook" aria-hidden="true"></i>
+							<!--i class="fa fa-facebook" aria-hidden="true"></i-->
+							<i>
+								<img src="<?= IMAGES ?>/icon/redes_facebook-_chico_superior.png" alt="redes_facebook-_chico_superior" class="img-fluid" />
+							</i>
 						</a></li>
 					<?php endif; ?>
+
 					<!-- Twitter -->
 					<?php if( isset($theme_mod['red_social_twitter']) && !empty($theme_mod['red_social_twitter']) ): ?>
-						<li><a target="_blank" href="<?= $theme_mod['red_social_twitter']; ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a> </li>
+						<li><a target="_blank" href="<?= $theme_mod['red_social_twitter']; ?>">
+						<!--i class="fa fa-twitter" aria-hidden="true"></i-->
+							<i>
+								<img src="<?= IMAGES ?>/icon/redes_twiter_chico_superior.png" alt="redes_facebook-_chico_superior" class="img-fluid" />
+							</i>
+						</a> </li>
 					<?php endif; ?>
+
+
 					<!-- Youtube -->
 					<?php if( isset($theme_mod['red_social_ytube']) && !empty($theme_mod['red_social_ytube']) ) : ?>
-						<li><a target="_blank" href="<?= $theme_mod['red_social_ytube']; ?>"><i class="fa fa-youtube" aria-hidden="true"></i></a> </li>
+						<li><a target="_blank" href="<?= $theme_mod['red_social_ytube']; ?>">
+						<!--i class="fa fa-youtube" aria-hidden="true"></i-->
+							<i>
+								<img src="<?= IMAGES ?>/icon/redes_youtube_chico_superior.png" alt="redes_youtube_chico_superior" class="img-fluid" />
+							</i>
+
+						</a> </li>
 					<?php endif; ?>
+
+
 				</ul> <!-- /.social-links -->
 
 				<!-- Seccion  Solo de Informacion  -->
