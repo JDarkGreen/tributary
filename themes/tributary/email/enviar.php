@@ -5,7 +5,7 @@
 	$message = $_POST['message'];
 	$name    = $_POST['name'];
 	$phone   = $_POST['phone'];
-	$subject = $_POST['subject'];
+	$subject = isset($_POST['subject']) && !empty($_POST['subject']) ? $_POST['subject'] : "";
 
 
 	//Email A quien se le rinde cuentas
@@ -34,7 +34,7 @@
 	$mail->AddAddress( $webmaster_email3 );
 
 	$mail->IsHTML(true); // send as HTML
-	$mail->Subject = "Consulta TRIBUTARY Formulario: Asunto - " . $subject;
+	$mail->Subject = "Consulta TRIBUTARY Formulario:" . $subject;
 
 	// Activar el almacenamiento en búfer de la salida
 	ob_start();

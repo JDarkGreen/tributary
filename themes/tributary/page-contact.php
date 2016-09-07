@@ -77,43 +77,6 @@
 
 			</div> <!-- /.col-xs-12 col-md-6 -->
 
-			<!-- SECCIÓN DE REDES SOCIALES  -->
-			<div class="col-xs-12 col-md-6 text-xs-center text-md-left">
-
-				<section class="pageContact__social">
-					<!-- Titulo --> <h2 class="pageSectionCommon__title text-uppercase"><?php _e( "redes sociales" , LANG ); ?></h2>
-					<!-- Separación  --> <br/>
-
-					<!-- Lista de Redes Sociales -->
-					<ul class="social-links social-links--gray">
-						<!-- Facebook -->
-						<?php if( isset($theme_mod['red_social_fb']) && !empty($theme_mod['red_social_fb']) ) : ?>
-							<li><a target="_blank" href="<?= $theme_mod['red_social_fb']; ?>">
-								<i class="fa fa-facebook" aria-hidden="true"></i>
-							</a></li>
-						<?php endif; ?>
-						<!-- Twitter -->
-						<?php if( isset($theme_mod['red_social_twitter']) && !empty($theme_mod['red_social_twitter']) ): ?>
-							<li><a target="_blank" href="<?= $theme_mod['red_social_twitter']; ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a> </li>
-						<?php endif; ?>
-						<!-- Youtube -->
-						<?php if( isset($theme_mod['red_social_ytube']) && !empty($theme_mod['red_social_ytube']) ) : ?>
-							<li><a target="_blank" href="<?= $theme_mod['red_social_ytube']; ?>"><i class="fa fa-youtube" aria-hidden="true"></i></a> </li>
-						<?php endif; ?>
-					</ul> <!-- /.social-links -->
-
-				</section> <!-- /. -->
-				
-			</div> <!-- /.col-xs-12 col-md-6 -->
-
-		</div> <!-- /.row -->
-
-		<!-- Separación margenes --> <div id="pageContact__separation"></div>	
-		<!-- Limpiar floats --> <div class="clearfix"></div>
-
-		<!-- Otra Fila row -->
-		<div class="row">
-
 			<!-- SECCIÓN DE FORMULARIO DE CONTACTO  -->
 			<div class="col-xs-12 col-md-6 text-xs-center text-md-left">
 
@@ -144,10 +107,10 @@
 						</div> <!-- /.pageContacto__form__group -->
 
 						<!-- Asunto -->
-						<div class="pageContacto__form__group">
+						<!--div class="pageContacto__form__group">
 							<label for="input_subject" class="sr-only"></label>
 							<input type="text" id="input_subject" name="input_subject" placeholder="<?php _e( 'Asunto', LANG ); ?>" required />
-						</div> <!-- /.pageContacto__form__group -->
+						</div> <! /.pageContacto__form__group -->
 
 						<!-- Mensaje -->
 						<div class="pageContacto__form__group">
@@ -170,6 +133,45 @@
 				<br class="hidden-sm-up" />			
 
 			</div> <!-- /.col-xs-12 col-md-6 text-xs-center text-md-left -->
+
+
+		</div> <!-- /.row -->
+
+		<!-- Separación margenes --> <div id="pageContact__separation"></div>	
+		<!-- Limpiar floats --> <div class="clearfix"></div>
+
+		<!-- Otra Fila row -->
+		<div class="row">
+
+
+			<!-- SECCIÓN DE REDES SOCIALES  -->
+			<div class="col-xs-12 col-md-6 text-xs-center text-md-left">
+
+				<section class="pageContact__social">
+					<!-- Titulo --> <h2 class="pageSectionCommon__title text-uppercase"><?php _e( "redes sociales" , LANG ); ?></h2>
+					<!-- Separación  --> <br/>
+
+					<!-- Lista de Redes Sociales -->
+					<ul class="social-links social-links--gray">
+						<!-- Facebook -->
+						<?php if( isset($theme_mod['red_social_fb']) && !empty($theme_mod['red_social_fb']) ) : ?>
+							<li><a target="_blank" href="<?= $theme_mod['red_social_fb']; ?>">
+								<i class="fa fa-facebook" aria-hidden="true"></i>
+							</a></li>
+						<?php endif; ?>
+						<!-- Twitter -->
+						<?php if( isset($theme_mod['red_social_twitter']) && !empty($theme_mod['red_social_twitter']) ): ?>
+							<li><a target="_blank" href="<?= $theme_mod['red_social_twitter']; ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a> </li>
+						<?php endif; ?>
+						<!-- Youtube -->
+						<?php if( isset($theme_mod['red_social_ytube']) && !empty($theme_mod['red_social_ytube']) ) : ?>
+							<li><a target="_blank" href="<?= $theme_mod['red_social_ytube']; ?>"><i class="fa fa-youtube" aria-hidden="true"></i></a> </li>
+						<?php endif; ?>
+					</ul> <!-- /.social-links -->
+
+				</section> <!-- /. -->
+				
+			</div> <!-- /.col-xs-12 col-md-6 -->
 
 			<!-- SECCION DE MAPA -->
 			<div class="col-xs-12 col-md-6">
