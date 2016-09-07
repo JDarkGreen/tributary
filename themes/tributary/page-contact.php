@@ -145,6 +145,7 @@
 
 
 			<!-- SECCIÓN DE REDES SOCIALES  -->
+			<?php /*
 			<div class="col-xs-12 col-md-6 text-xs-center text-md-left">
 
 				<section class="pageContact__social">
@@ -172,9 +173,10 @@
 				</section> <!-- /. -->
 				
 			</div> <!-- /.col-xs-12 col-md-6 -->
+			*/?>
 
 			<!-- SECCION DE MAPA -->
-			<div class="col-xs-12 col-md-6">
+			<div class="col-xs-12">
 
 				<section class="pageContact__map">
 					
