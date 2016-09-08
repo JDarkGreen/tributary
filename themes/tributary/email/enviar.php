@@ -11,7 +11,7 @@
 	//Email A quien se le rinde cuentas
 	$webmaster_email1 = "hchavez@tributaryperu.com";
 	$webmaster_email2 = "informes@tributaryperu.com";
-	$webmaster_email3 = "jgomez@ingenioart.com";
+	#$webmaster_email3 = "jgomez@ingenioart.com";
 
 	include("./class.phpmailer.php");
  	include("./class.smtp.php");
@@ -31,7 +31,7 @@
 	$mail->FromName = $name;
 	$mail->AddAddress( $webmaster_email1 );
 	$mail->AddAddress( $webmaster_email2 );
-	$mail->AddAddress( $webmaster_email3 );
+	#$mail->AddAddress( $webmaster_email3 );
 
 	$mail->IsHTML(true); // send as HTML
 	$mail->Subject = "Consulta TRIBUTARY Formulario:" . $subject;
